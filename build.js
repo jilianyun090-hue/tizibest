@@ -891,7 +891,74 @@ function build() {
     console.error("article.html template not found!");
   }
 
+  // 11. GENERATE SITEMAP.XML & ROBOTS.TXT
+  generateSitemapAndRobots();
+
   console.log("Static site build completed successfully!");
+}
+
+// Helper to format ISO date to YYYY-MM-DD for sitemap
+function formatSitemapDate(dateStr) {
+  if (!dateStr) return new Date().toISOString().split('T')[0];
+  try {
+    const d = new Date(dateStr);
+    if (!isNaN(d.getTime())) {
+      return d.toISOString().split('T')[0];
+    }
+  } catch (e) {}
+  return new Date().toISOString().split('T')[0];
+}
+
+// Sitemap and Robots.txt Generator
+function generateSitemapAndRobots() {
+  console.log("Generating sitemap.xml and robots.txt...");
+  const baseUrl = 'https://vpns-top.com';
+  
+  // 1. Generate Sitemap XML
+  let sitemapXML = `<?xml version="1.0" encoding="UTF-8"?>\n`;
+  sitemapXML += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
+  
+  const todayStr = new Date().toISOString().split('T')[0];
+  
+  // Core pages
+  const corePages = [
+    { url: '', priority: '1.0', changefreq: 'daily' },
+    { url: '/airport.html', priority: '0.9', changefreq: 'daily' },
+    { url: '/reviews.html', priority: '0.9', changefreq: 'daily' },
+    { url: '/guides.html', priority: '0.9', changefreq: 'daily' },
+    { url: '/software.html', priority: '0.8', changefreq: 'weekly' }
+  ];
+  
+  corePages.forEach(p => {
+    sitemapXML += `  <url>\n`;
+    sitemapXML += `    <loc>${baseUrl}${p.url}</loc>\n`;
+    sitemapXML += `    <lastmod>${todayStr}</lastmod>\n`;
+    sitemapXML += `    <changefreq>${p.changefreq}</changefreq>\n`;
+    sitemapXML += `    <priority>${p.priority}</priority>\n`;
+    sitemapXML += `  </url>\n`;
+  });
+  
+  // Articles
+  articles.forEach(art => {
+    const lastMod = formatSitemapDate(art.date);
+    sitemapXML += `  <url>\n`;
+    sitemapXML += `    <loc>${baseUrl}/posts/${art.slug}.html</loc>\n`;
+    sitemapXML += `    <lastmod>${lastMod}</lastmod>\n`;
+    sitemapXML += `    <changefreq>monthly</changefreq>\n`;
+    sitemapXML += `    <priority>0.8</priority>\n`;
+    sitemapXML += `  </url>\n`;
+  });
+  
+  sitemapXML += `</urlset>\n`;
+  
+  // Write sitemap.xml
+  fs.writeFileSync(path.join(__dirname, 'sitemap.xml'), sitemapXML, 'utf-8');
+  console.log("Generated sitemap.xml successfully!");
+  
+  // 2. Generate robots.txt
+  const robotsTxt = `User-agent: *\nAllow: /\n\nSitemap: ${baseUrl}/sitemap.xml\n`;
+  fs.writeFileSync(path.join(__dirname, 'robots.txt'), robotsTxt, 'utf-8');
+  console.log("Generated robots.txt successfully!");
 }
 
 build();
