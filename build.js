@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const https = require('https');
 const articles = require('./src/data/articles.js');
 const articleGenerator = require('./src/data/articleGenerator.js');
 
@@ -894,6 +895,9 @@ function build() {
   // 11. GENERATE SITEMAP.XML & ROBOTS.TXT
   generateSitemapAndRobots();
 
+  // 12. CONFIGURE & SUBMIT TO INDEXNOW
+  generateIndexNow();
+
   console.log("Static site build completed successfully!");
 }
 
@@ -959,6 +963,76 @@ function generateSitemapAndRobots() {
   const robotsTxt = `User-agent: *\nAllow: /\n\nSitemap: ${baseUrl}/sitemap.xml\n`;
   fs.writeFileSync(path.join(__dirname, 'robots.txt'), robotsTxt, 'utf-8');
   console.log("Generated robots.txt successfully!");
+}
+
+// IndexNow Generator and Submitter
+function generateIndexNow() {
+  console.log("Generating IndexNow validation key file...");
+  const apiKey = '05709fa9015c42abb8ed05abca174cdd';
+  const baseUrl = 'https://vpns-top.com';
+  
+  // Write the verification txt file
+  fs.writeFileSync(path.join(__dirname, `${apiKey}.txt`), apiKey, 'utf-8');
+  console.log(`Generated ${apiKey}.txt successfully!`);
+
+  // Collect all URLs to submit
+  const urls = [
+    `${baseUrl}/`,
+    `${baseUrl}/airport.html`,
+    `${baseUrl}/reviews.html`,
+    `${baseUrl}/guides.html`,
+    `${baseUrl}/software.html`
+  ];
+  
+  articles.forEach(art => {
+    urls.push(`${baseUrl}/posts/${art.slug}.html`);
+  });
+
+  // Call API submission
+  submitIndexNow(apiKey, baseUrl, urls);
+}
+
+function submitIndexNow(apiKey, baseUrl, urls) {
+  console.log("Submitting URLs to IndexNow (Bing/Yandex)...");
+  
+  const postData = JSON.stringify({
+    host: 'vpns-top.com',
+    key: apiKey,
+    keyLocation: `${baseUrl}/${apiKey}.txt`,
+    urlList: urls
+  });
+
+  const options = {
+    hostname: 'api.indexnow.org',
+    port: 443,
+    path: '/IndexNow',
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json; charset=utf-8',
+      'Content-Length': Buffer.byteLength(postData)
+    }
+  };
+
+  const req = https.request(options, (res) => {
+    let data = '';
+    res.on('data', (chunk) => {
+      data += chunk;
+    });
+    res.on('end', () => {
+      if (res.statusCode === 200) {
+        console.log("Successfully submitted URLs to IndexNow!");
+      } else {
+        console.warn(`IndexNow submission responded with status code: ${res.statusCode}. Response: ${data}`);
+      }
+    });
+  });
+
+  req.on('error', (e) => {
+    console.warn("IndexNow submission failed (this is normal if build container has no internet access):", e.message);
+  });
+
+  req.write(postData);
+  req.end();
 }
 
 build();
