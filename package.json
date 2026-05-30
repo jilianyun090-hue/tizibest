@@ -1,0 +1,13 @@
+{
+  "name": "vpns-top-blog",
+  "version": "1.0.0",
+  "description": "Airport Recommendations Blog",
+  "main": "build.js",
+  "scripts": {
+    "build": "node build.js",
+    "dev": "node build.js && npx http-server ./ -p 8080"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
