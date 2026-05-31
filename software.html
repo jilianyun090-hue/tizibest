@@ -17,7 +17,7 @@
         <svg viewBox="0 0 24 24">
           <path d="M12 2L2 22h20L12 2zm0 3.99L19.53 19H4.47L12 5.99zM13 16h-2v2h2v-2zm0-6h-2v4h2v-4z"/>
         </svg>
-        <span>vpns-top.com</span>
+        <span>稳定机场推荐</span>
       </a>
       
       <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle Menu">☰</button>
@@ -56,13 +56,25 @@
       <section>
         <h1 class="hero-title" style="margin-bottom: 0.5rem; text-align: left;">2026常用科学上网客户端下载与配置指南</h1>
         <p style="color: var(--text-secondary); margin-bottom: 2rem;">为了方便大家快速配置订阅出海，我们整理了 Windows、macOS、Android、iOS 各大平台主流代理软件的官方下载链接及图文使用教程。请根据您的系统选择合适的软件。</p>
-        
+
+        <!-- 快速选择导航 -->
+        <div style="background:var(--card-bg);border:1px solid var(--border-color);border-radius:12px;padding:1.5rem;margin-bottom:2rem;">
+          <h3 style="margin:0 0 1rem 0;font-size:1rem;">💡 新手快速选择指南：</h3>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:0.75rem;">
+            <div style="background:rgba(99,102,241,0.08);border-radius:8px;padding:0.75rem;text-align:center;"><div style="font-size:1.5rem;">💻</div><div style="font-weight:600;font-size:0.9rem;">Windows</div><div style="font-size:0.8rem;color:var(--accent-primary);">Clash Verge Rev 或 v2rayN</div></div>
+            <div style="background:rgba(99,102,241,0.08);border-radius:8px;padding:0.75rem;text-align:center;"><div style="font-size:1.5rem;">🍎</div><div style="font-weight:600;font-size:0.9rem;">macOS</div><div style="font-size:0.8rem;color:var(--accent-primary);">Clash Verge Rev</div></div>
+            <div style="background:rgba(99,102,241,0.08);border-radius:8px;padding:0.75rem;text-align:center;"><div style="font-size:1.5rem;">🤖</div><div style="font-weight:600;font-size:0.9rem;">Android</div><div style="font-size:0.8rem;color:var(--accent-primary);">Clash Meta 或 Nekobox</div></div>
+            <div style="background:rgba(99,102,241,0.08);border-radius:8px;padding:0.75rem;text-align:center;"><div style="font-size:1.5rem;">📱</div><div style="font-weight:600;font-size:0.9rem;">iOS</div><div style="font-size:0.8rem;color:var(--accent-primary);">Shadowrocket (小火箭)</div></div>
+          </div>
+        </div>
+
+        <h2 style="font-size:1.3rem;border-left:4px solid var(--accent-primary);padding-left:0.75rem;margin:2rem 0 1.2rem;">💻 电脑端 (Windows / macOS)</h2>
         <div class="software-grid">
           
           <!-- Clash Verge Rev -->
           <div class="software-card">
             <div class="software-img-wrapper">
-              <img src="assets/images/clash-verge.png" alt="Clash Verge Rev 界面示意图" class="software-img">
+              <img src="https://clashmac.cn.com/img/logo/clash-verge-rev.webp" alt="Clash Verge Rev" class="software-img" onerror="this.src='assets/images/clash-verge.png'">
             </div>
             <div class="software-content">
               <div class="software-meta">
@@ -83,7 +95,14 @@
                   <li>进入 <strong>Proxies</strong> 页面选择节点，并在 <strong>Settings</strong> 开启 <strong>System Proxy</strong> 系统代理开关。</li>
                 </ol>
               </div>
-              
+
+              <div style="margin:1rem 0;display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;">
+                <figure style="margin:0;text-align:center;"><img src="https://clashmac.cn.com/img/docs/20260105115031668.webp" alt="Clash Verge Rev 导入订阅" style="width:100%;border-radius:8px;border:1px solid var(--border-color);" loading="lazy"><figcaption style="font-size:0.72rem;color:var(--text-secondary);margin-top:0.25rem;">① 粘贴订阅链接点击导入</figcaption></figure>
+                <figure style="margin:0;text-align:center;"><img src="https://clashmac.cn.com/img/docs/20260105115525822.webp" alt="Clash Verge Rev 选节点" style="width:100%;border-radius:8px;border:1px solid var(--border-color);" loading="lazy"><figcaption style="font-size:0.72rem;color:var(--text-secondary);margin-top:0.25rem;">② 选择低延迟节点</figcaption></figure>
+                <figure style="margin:0;text-align:center;"><img src="https://clashmac.cn.com/img/docs/20260105115059757.webp" alt="Clash Verge Rev 开启代理" style="width:100%;border-radius:8px;border:1px solid var(--border-color);" loading="lazy"><figcaption style="font-size:0.72rem;color:var(--text-secondary);margin-top:0.25rem;">③ 开启 System Proxy</figcaption></figure>
+                <figure style="margin:0;text-align:center;"><img src="https://clashmac.cn.com/img/docs/20260102144939298.webp" alt="Clash Verge Rev 规则模式" style="width:100%;border-radius:8px;border:1px solid var(--border-color);" loading="lazy"><figcaption style="font-size:0.72rem;color:var(--text-secondary);margin-top:0.25rem;">④ 推荐使用规则模式</figcaption></figure>
+              </div>
+
               <div class="software-actions">
                 <a href="https://github.com/clash-verge-rev/clash-verge-rev/releases" target="_blank" rel="nofollow" class="soft-btn soft-btn-download">GitHub 官方下载</a>
                 <a href="posts/clash-verge-rev-tutorial.html" class="soft-btn soft-btn-doc">详细保姆级教程</a>
@@ -94,7 +113,7 @@
           <!-- Shadowrocket -->
           <div class="software-card">
             <div class="software-img-wrapper">
-              <img src="assets/images/shadowrocket.png" alt="Shadowrocket 小火箭界面示意图" class="software-img">
+              <img src="https://clashmac.cn.com/img/logo/Shadowrocket.webp" alt="Shadowrocket 小火箭" class="software-img" onerror="this.src='assets/images/shadowrocket.png'">
             </div>
             <div class="software-content">
               <div class="software-meta">
@@ -114,7 +133,13 @@
                   <li>开启顶部“未连接”开关，同意安装 VPN 描述文件，即可开启代理。</li>
                 </ol>
               </div>
-              
+
+              <div style="margin:1rem 0;display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.6rem;">
+                <figure style="margin:0;text-align:center;"><img src="https://clashmac.cn.com/img/docs/20260104120350916.webp" alt="小火箭添加订阅" style="width:100%;border-radius:8px;border:1px solid var(--border-color);" loading="lazy"><figcaption style="font-size:0.72rem;color:var(--text-secondary);margin-top:0.25rem;">① 点＋选 Subscribe</figcaption></figure>
+                <figure style="margin:0;text-align:center;"><img src="https://clashmac.cn.com/img/docs/20260104120425805.webp" alt="小火箭粘贴链接" style="width:100%;border-radius:8px;border:1px solid var(--border-color);" loading="lazy"><figcaption style="font-size:0.72rem;color:var(--text-secondary);margin-top:0.25rem;">② 粘贴订阅地址</figcaption></figure>
+                <figure style="margin:0;text-align:center;"><img src="https://clashmac.cn.com/img/docs/20260104120434708.webp" alt="小火箭开启代理" style="width:100%;border-radius:8px;border:1px solid var(--border-color);" loading="lazy"><figcaption style="font-size:0.72rem;color:var(--text-secondary);margin-top:0.25rem;">③ 开启代理开关</figcaption></figure>
+              </div>
+
               <div class="software-actions">
                 <a href="https://apps.apple.com/us/app/shadowrocket/id932747118" target="_blank" rel="nofollow" class="soft-btn soft-btn-download">App Store 购买下载</a>
                 <a href="posts/shadowrocket-tutorial.html" class="soft-btn soft-btn-doc">节点配置教程</a>
@@ -125,7 +150,7 @@
           <!-- v2rayN -->
           <div class="software-card">
             <div class="software-img-wrapper">
-              <img src="assets/images/v2rayn.png" alt="v2rayN 界面示意图" class="software-img">
+              <img src="https://clashmac.cn.com/img/logo/v2rayn.webp" alt="v2rayN" class="software-img" onerror="this.src='assets/images/v2rayn.png'">
             </div>
             <div class="software-content">
               <div class="software-meta">
@@ -145,7 +170,14 @@
                   <li>右键右下角托盘图标，将 <strong>系统代理</strong> 设为“自动配置系统代理”，路由模式推荐“绕过大陆”。</li>
                 </ol>
               </div>
-              
+
+              <div style="margin:1rem 0;display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;">
+                <figure style="margin:0;text-align:center;"><img src="https://clashmac.cn.com/img/docs/20260105111003561.webp" alt="v2rayN 订阅分组" style="width:100%;border-radius:8px;border:1px solid var(--border-color);" loading="lazy"><figcaption style="font-size:0.72rem;color:var(--text-secondary);margin-top:0.25rem;">① 订阅分组设置</figcaption></figure>
+                <figure style="margin:0;text-align:center;"><img src="https://clashmac.cn.com/img/docs/20260105111011206.webp" alt="v2rayN 添加订阅" style="width:100%;border-radius:8px;border:1px solid var(--border-color);" loading="lazy"><figcaption style="font-size:0.72rem;color:var(--text-secondary);margin-top:0.25rem;">② 添加订阅地址</figcaption></figure>
+                <figure style="margin:0;text-align:center;"><img src="https://clashmac.cn.com/img/docs/20260105111110903.webp" alt="v2rayN 节点列表" style="width:100%;border-radius:8px;border:1px solid var(--border-color);" loading="lazy"><figcaption style="font-size:0.72rem;color:var(--text-secondary);margin-top:0.25rem;">③ 选择低延迟节点</figcaption></figure>
+                <figure style="margin:0;text-align:center;"><img src="https://clashmac.cn.com/img/docs/20260105111119897.webp" alt="v2rayN 系统代理" style="width:100%;border-radius:8px;border:1px solid var(--border-color);" loading="lazy"><figcaption style="font-size:0.72rem;color:var(--text-secondary);margin-top:0.25rem;">④ 开启系统代理</figcaption></figure>
+              </div>
+
               <div class="software-actions">
                 <a href="https://github.com/2dust/v2rayN/releases" target="_blank" rel="nofollow" class="soft-btn soft-btn-download">GitHub 官方下载</a>
                 <a href="posts/v2rayn-tutorial.html" class="soft-btn soft-btn-doc">使用教程</a>
@@ -156,7 +188,7 @@
           <!-- Clash Meta Android -->
           <div class="software-card">
             <div class="software-img-wrapper">
-              <img src="assets/images/clash-meta.png" alt="Clash Meta Android 界面示意图" class="software-img">
+              <img src="https://clashmac.cn.com/img/logo/clash-meta-for-android.webp" alt="Clash Meta Android" class="software-img" onerror="this.src='assets/images/clash-meta.png'">
             </div>
             <div class="software-content">
               <div class="software-meta">
@@ -176,14 +208,59 @@
                   <li>选中该配置，返回主界面点击 <strong>启动（Start）</strong> 并在代理中选择节点即可。</li>
                 </ol>
               </div>
-              
+
+              <div style="margin:1rem 0;display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.6rem;">
+                <figure style="margin:0;text-align:center;"><img src="https://clashmac.cn.com/img/docs/20260102135135983.webp" alt="Clash Meta 新增配置" style="width:100%;border-radius:8px;border:1px solid var(--border-color);" loading="lazy"><figcaption style="font-size:0.72rem;color:var(--text-secondary);margin-top:0.25rem;">① 点＋新增配置</figcaption></figure>
+                <figure style="margin:0;text-align:center;"><img src="https://clashmac.cn.com/img/docs/20260102135152264.webp" alt="Clash Meta 粘贴订阅" style="width:100%;border-radius:8px;border:1px solid var(--border-color);" loading="lazy"><figcaption style="font-size:0.72rem;color:var(--text-secondary);margin-top:0.25rem;">② 粘贴订阅链接保存</figcaption></figure>
+                <figure style="margin:0;text-align:center;"><img src="https://clashmac.cn.com/img/docs/20260102135220682.webp" alt="Clash Meta 开启代理" style="width:100%;border-radius:8px;border:1px solid var(--border-color);" loading="lazy"><figcaption style="font-size:0.72rem;color:var(--text-secondary);margin-top:0.25rem;">③ 点启动开启代理</figcaption></figure>
+              </div>
+
               <div class="software-actions">
-                <a href="https://github.com/MetaCubeX/mihomo-party/releases" target="_blank" rel="nofollow" class="soft-btn soft-btn-download">GitHub 官方下载</a>
+                <a href="https://github.com/MetaCubeX/ClashMetaForAndroid/releases" target="_blank" rel="nofollow" class="soft-btn soft-btn-download">GitHub 官方下载</a>
                 <a href="posts/clash-meta-android-tutorial.html" class="soft-btn soft-btn-doc">安卓配置指南</a>
               </div>
             </div>
           </div>
 
+          <!-- Nekobox 猫盒 -->
+          <div class="software-card">
+            <div class="software-img-wrapper">
+              <img src="https://clashmac.cn.com/img/logo/nekobox.webp" alt="Nekobox 猫盒" class="software-img">
+            </div>
+            <div class="software-content">
+              <div class="software-meta">
+                <span class="platform-badge platform-android">Android</span>
+                <span class="software-status status-classic">极客全能</span>
+              </div>
+              <h2 class="software-title">Nekobox (猫盒)</h2>
+              <p class="software-desc">安卓全能王，基于 sing-box 核心开发，支持 VMess、VLESS、Trojan、Shadowsocks、Hysteria2、TUIC、NaïveProxy 等几乎所有主流协议，对新协议适配速度极快，是极客玩家必备工具。</p>
+              <div class="software-steps">
+                <div class="step-title">⚙️ 快速配置步骤：</div>
+                <ol>
+                  <li>复制机场订阅链接。</li>
+                  <li>打开 Nekobox，点击底部 <strong>配置</strong>，再点右上角 <strong>＋</strong>。</li>
+                  <li>选择 <strong>从剪贴板导入</strong> 或 <strong>以 URL 添加配置文件</strong>。</li>
+                  <li>填写名称与订阅 URL 后保存，等待订阅更新完成。</li>
+                  <li>返回主界面，点击大的 <strong>启动按钮</strong> 开启代理。</li>
+                </ol>
+              </div>
+              <div class="software-actions">
+                <a href="https://github.com/MatsuriDayo/NekoBoxForAndroid/releases" target="_blank" rel="nofollow" class="soft-btn soft-btn-download">GitHub 官方下载</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 使用提示 -->
+        <div style="background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(139,92,246,0.08));border:1px solid rgba(99,102,241,0.2);border-radius:12px;padding:1.5rem;margin-top:2rem;">
+          <h3 style="margin:0 0 0.75rem 0;font-size:1rem;color:var(--accent-primary);">⚠️ 使用提示</h3>
+          <ul style="margin:0;padding-left:1.25rem;color:var(--text-secondary);font-size:0.9rem;line-height:1.8;">
+            <li>导入订阅前，请务必 <strong>关闭浏览器自动翻译</strong>，防止订阅链接被破坏。</li>
+            <li>建议使用 <strong>规则模式</strong>（国内直连、国外走代理），节省流量。</li>
+            <li>节点速度慢时，切换延迟低的节点或更新订阅后重试。</li>
+            <li>无法访问时，先检查 <strong>系统代理开关</strong> 是否已开启。</li>
+          </ul>
         </div>
       </section>
     </main>
