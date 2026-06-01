@@ -13,10 +13,11 @@ const airports = [
     features: ["IEPL专线", "不限速", "不限设备数", "支持不限时"],
     desc: "2026综合首选，采用IEPL国际专线保证晚高峰。支持不限时套餐且不设设备上限，对新手和极客都极其友好。",
     affLink: "https://haozevpn.jlyvipaff.com/#/?code=KUKfOY13",
-    rank: 1,
+    rank: 3,
     noLimit: true,
     hasTrial: false,
-    tgGroup: "https://t.me/jilianyun"
+    tgGroup: "https://t.me/jilianyun",
+    logo: "https://i.ibb.co/5XvXTMxR/photo-2025-12-14-16-40-25.jpg"
   },
   {
     name: "瞬云机场",
@@ -25,10 +26,11 @@ const airports = [
     features: ["Anycast直连", "1倍率无虚标", "大带宽", "支持不限时"],
     desc: "全站一倍率，提供超多优质Anycast直连专线节点。价格十分低廉，是不限时大流量用户的极佳选择。",
     affLink: "https://bbb.jichang.best/#/register?code=o4I4kToe",
-    rank: 2,
+    rank: 1,
     noLimit: true,
     hasTrial: false,
-    tgGroup: "https://t.me/shunyun"
+    tgGroup: "https://t.me/shunyun",
+    logo: "https://i.ibb.co/DHLgNf1d/Gemini-Generated-Image-7oufv07oufv07ouf-1.png"
   },
   {
     name: "寰宇云",
@@ -37,10 +39,11 @@ const airports = [
     features: ["BGP多线中转", "支持不限时", "按量付费", "高性价比"],
     desc: "主打按量付费与不限时套餐，年付仅需89元起。提供BGP多线中转，性价比优秀，适合日常低频或备用用户。",
     affLink: "https://bbb.jichang.best/#/register?code=o4I4kToe",
-    rank: 3,
+    rank: 2,
     noLimit: true,
     hasTrial: false,
-    tgGroup: "https://t.me/huanyuyun"
+    tgGroup: "https://t.me/huanyuyun",
+    logo: "https://i.ibb.co/wrhvStSP/Gemini-Generated-Image-8su9c18su9c18su9-1.png"
   },
   {
     name: "光年梯",
@@ -52,7 +55,8 @@ const airports = [
     rank: 4,
     noLimit: true,
     hasTrial: false,
-    tgGroup: "https://t.me/guangnianti"
+    tgGroup: "https://t.me/guangnianti",
+    logo: "https://i.ibb.co/Gv8rp8rk/photo-2026-04-15-13-24-38.jpg"
   },
   {
     name: "极速云机场",
@@ -64,7 +68,8 @@ const airports = [
     rank: 5,
     noLimit: true,
     hasTrial: false,
-    tgGroup: "https://t.me/jisuyun"
+    tgGroup: "https://t.me/jisuyun",
+    logo: "https://i.ibb.co/qF3fTyK4/jisu-LOGO.png"
   },
   {
     name: "山水云",
@@ -76,7 +81,8 @@ const airports = [
     rank: 6,
     noLimit: true,
     hasTrial: false,
-    tgGroup: "https://t.me/shanshuiyun"
+    tgGroup: "https://t.me/shanshuiyun",
+    logo: "https://i.ibb.co/LD8J8vN2/image.jpg"
   },
   {
     name: "秒秒云",
@@ -88,7 +94,8 @@ const airports = [
     rank: 7,
     noLimit: true,
     hasTrial: false,
-    tgGroup: "https://t.me/miaomiaoyun"
+    tgGroup: "https://t.me/miaomiaoyun",
+    logo: "https://i.ibb.co/Jk74kH3R/miaomiao.png"
   },
   {
     name: "迅达VPN",
@@ -100,7 +107,8 @@ const airports = [
     rank: 8,
     noLimit: false,
     hasTrial: false,
-    tgGroup: ""
+    tgGroup: "",
+    logo: "https://i.ibb.co/Sw0nyMS8/image.jpg"
   },
   {
     name: "Edge-X机场",
@@ -112,7 +120,8 @@ const airports = [
     rank: 9,
     noLimit: true,
     hasTrial: false,
-    tgGroup: ""
+    tgGroup: "",
+    logo: "https://i.ibb.co/F4VvFN55/edge.jpg"
   },
   {
     name: "可达加速度",
@@ -124,7 +133,8 @@ const airports = [
     rank: 10,
     noLimit: false,
     hasTrial: false,
-    tgGroup: ""
+    tgGroup: "",
+    logo: "https://i.ibb.co/DBnJmbc/image.jpg"
   },
   {
     name: "奈云",
@@ -136,7 +146,8 @@ const airports = [
     rank: 11,
     noLimit: true,
     hasTrial: false,
-    tgGroup: "https://t.me/naiyun"
+    tgGroup: "https://t.me/naiyun",
+    logo: "https://i.ibb.co/RTB2cqwW/image.png"
   },
   {
     name: "隐云",
@@ -148,7 +159,8 @@ const airports = [
     rank: 12,
     noLimit: false,
     hasTrial: false,
-    tgGroup: ""
+    tgGroup: "",
+    logo: "https://i.ibb.co/FCC7ptp/logo.webp"
   },
   {
     name: "山海机场",
@@ -160,7 +172,8 @@ const airports = [
     rank: 13,
     noLimit: true,
     hasTrial: false,
-    tgGroup: "https://t.me/shanhai"
+    tgGroup: "https://t.me/shanhai",
+    logo: "https://i.ibb.co/BHQ5pNFZ/image.png"
   },
   {
     name: "LiZione",
@@ -172,7 +185,8 @@ const airports = [
     rank: 14,
     noLimit: false,
     hasTrial: false,
-    tgGroup: "https://t.me/lizione"
+    tgGroup: "https://t.me/lizione",
+    logo: "https://i.ibb.co/PGkmP1rg/lizione.jpg"
   },
   {
     name: "光速云",
@@ -184,7 +198,8 @@ const airports = [
     rank: 15,
     noLimit: true,
     hasTrial: false,
-    tgGroup: "https://t.me/guangshuyun"
+    tgGroup: "https://t.me/guangshuyun",
+    logo: "https://i.ibb.co/FkYmVdyN/logo.jpg"
   },
   {
     name: "全球云",
@@ -196,7 +211,8 @@ const airports = [
     rank: 16,
     noLimit: true,
     hasTrial: false,
-    tgGroup: "https://t.me/quanqiuyun"
+    tgGroup: "https://t.me/quanqiuyun",
+    logo: "https://i.ibb.co/4Zzh2Qk6/image.png"
   },
   {
     name: "星岛梦",
@@ -419,10 +435,13 @@ function build() {
   // 5. Generate airport-card grids (for root pages)
   const airportCardsMarkup = airports.map(ap => {
     const tagsMarkup = ap.features.map(f => `<span class="feature-tag">${f}</span>`).join('');
+    const avatarHTML = ap.logo 
+      ? `<div class="airport-avatar" style="padding:0;overflow:hidden;background:transparent;"><img src="${ap.logo}" alt="${ap.name} Logo" style="width:100%;height:100%;object-fit:cover;border-radius:10px;" loading="lazy"></div>`
+      : `<div class="airport-avatar">${ap.name[0]}</div>`;
     return `
       <div class="airport-card">
         <div class="airport-card-header">
-          <div class="airport-avatar">${ap.name[0]}</div>
+          ${avatarHTML}
           <div class="airport-meta-info">
             <h3 class="airport-name">${ap.name}</h3>
             <span class="airport-card-badge badge-recom">推荐度: Top ${ap.rank}</span>
@@ -450,10 +469,13 @@ function build() {
   // Adjusted cards markup for posts (pointing to sibling htmls)
   const airportCardsMarkupForPosts = airports.map(ap => {
     const tagsMarkup = ap.features.map(f => `<span class="feature-tag">${f}</span>`).join('');
+    const avatarHTML = ap.logo 
+      ? `<div class="airport-avatar" style="padding:0;overflow:hidden;background:transparent;"><img src="${ap.logo}" alt="${ap.name} Logo" style="width:100%;height:100%;object-fit:cover;border-radius:10px;" loading="lazy"></div>`
+      : `<div class="airport-avatar">${ap.name[0]}</div>`;
     return `
       <div class="airport-card">
         <div class="airport-card-header">
-          <div class="airport-avatar">${ap.name[0]}</div>
+          ${avatarHTML}
           <div class="airport-meta-info">
             <h3 class="airport-name">${ap.name}</h3>
             <span class="airport-card-badge badge-recom">推荐度: Top ${ap.rank}</span>
@@ -552,11 +574,15 @@ function build() {
     else if (ap.rank === 2) rankBadge = `<span class="compare-rank rank-2">🥈</span>`;
     else if (ap.rank === 3) rankBadge = `<span class="compare-rank rank-3">🥉</span>`;
 
+    const avatarHTML = ap.logo 
+      ? `<div class="airport-list-avatar" style="padding:0;overflow:hidden;background:transparent;"><img src="${ap.logo}" alt="${ap.name} Logo" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" loading="lazy"></div>`
+      : `<div class="airport-list-avatar">${ap.name[0]}</div>`;
+
     return `
       <div class="airport-list-item">
         <div class="airport-list-left">
           <div class="airport-list-rank">${rankBadge}</div>
-          <div class="airport-list-avatar">${ap.name[0]}</div>
+          ${avatarHTML}
           <div class="airport-list-name-section">
             <h3 class="airport-list-name">${ap.name}</h3>
             <span class="airport-list-sub">综合评分: ${(10 - ap.rank*0.1).toFixed(1)} / 10</span>
@@ -586,8 +612,8 @@ function build() {
     `;
   }).join('\n');
 
-  // 6.3 Generate pinned airport list (Ermao style, top 5)
-  const pinnedAirports = sortedAirports.slice(0, 5);
+  // 6.3 Generate pinned airport list (Ermao style, top 3)
+  const pinnedAirports = sortedAirports.slice(0, 3);
   const pinnedAirportListMarkup = pinnedAirports.map(ap => {
     const tagsMarkup = ap.features.slice(0, 3).map(f => `<span class="feature-tag">${f}</span>`).join('');
     let rankBadge = `<span class="compare-rank">${ap.rank}</span>`;
@@ -595,11 +621,15 @@ function build() {
     else if (ap.rank === 2) rankBadge = `<span class="compare-rank rank-2">🥈</span>`;
     else if (ap.rank === 3) rankBadge = `<span class="compare-rank rank-3">🥉</span>`;
 
+    const avatarHTML = ap.logo 
+      ? `<div class="airport-list-avatar" style="padding:0;overflow:hidden;background:transparent;"><img src="${ap.logo}" alt="${ap.name} Logo" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" loading="lazy"></div>`
+      : `<div class="airport-list-avatar" style="background: var(--accent); color: white;">${ap.name[0]}</div>`;
+
     return `
       <div class="airport-list-item pinned-item">
         <div class="airport-list-left">
           <div class="airport-list-rank">${rankBadge}</div>
-          <div class="airport-list-avatar" style="background: var(--accent); color: white;">${ap.name[0]}</div>
+          ${avatarHTML}
           <div class="airport-list-name-section">
             <h3 class="airport-list-name" style="display: flex; align-items: center; gap: 0.5rem;">
               ${ap.name}
