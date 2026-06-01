@@ -124,13 +124,26 @@ const airports = [
     logo: "https://i.ibb.co/F4VvFN55/edge.jpg"
   },
   {
+    name: "边界云",
+    price: "15.00",
+    slug: "bianjieyun-review",
+    features: ["IEPL专线", "50+全球节点", "3天退款保障"],
+    desc: "搭载IEPL企业级物理专线，提供50+全球节点，支持大部分海外主流流媒体与ChatGPT解锁。支持UDP，支持最高500Mbps速率，并提供3天无理由退款保障。",
+    affLink: "https://www.lvpn.cc/r/6UQDZT",
+    rank: 10,
+    noLimit: false,
+    hasTrial: false,
+    tgGroup: "",
+    logo: "https://i.ibb.co/RpffcYng/image.jpg"
+  },
+  {
     name: "可达加速度",
     price: "10.00",
     slug: "kedajiasudu-review",
     features: ["混合专线", "价格实惠", "多线负载", "节点丰富"],
     desc: "专线多线负载均衡架构，套餐价格亲民，适合低预算下追求较高速度和多节点备选的玩家。",
     affLink: "https://1.mkd997.com/#/register?code=JgTY5JiT",
-    rank: 10,
+    rank: 11,
     noLimit: false,
     hasTrial: false,
     tgGroup: "",
@@ -143,7 +156,7 @@ const airports = [
     features: ["跨境专线", "AI/Netflix解锁", "全客户端支持", "不限时"],
     desc: "提供超强流媒体与AI平台解锁，包含专属客户端，极简化一键连接，支持不限时按量套餐。",
     affLink: "https://haozevpn.gcvipaff.cc/#/?code=WRQJc2v4",
-    rank: 11,
+    rank: 12,
     noLimit: true,
     hasTrial: false,
     tgGroup: "https://t.me/naiyun",
@@ -156,7 +169,7 @@ const airports = [
     features: ["中转专线", "高隐蔽性", "高安全性", "防封锁协议"],
     desc: "主打中转专线与自研高隐蔽性防封锁传输协议，抗封锁能力强，特别适合高敏感时期的稳定科学上网。",
     affLink: "https://flycat.flycatvipaff.cc/#/?code=1arEKHqh",
-    rank: 12,
+    rank: 13,
     noLimit: false,
     hasTrial: false,
     tgGroup: "",
@@ -169,7 +182,7 @@ const airports = [
     features: ["极致低价", "不限时套餐", "包年特惠", "中转加速"],
     desc: "适合大流量下载和追求绝对低门槛的平民级机场。套餐价格极低，性价比极高，推荐作为常用备用选项。",
     affLink: "https://shanhai.sbs/#/register?code=qVTbPfWP",
-    rank: 13,
+    rank: 14,
     noLimit: true,
     hasTrial: false,
     tgGroup: "https://t.me/shanhai",
@@ -182,7 +195,7 @@ const airports = [
     features: ["Shadowsocks", "BGP中转", "多端支持", "原生解锁"],
     desc: "稳定Shadowsocks原生协议专线，节点速度快且安全风控干净，完美解锁ChatGPT与各类流媒体。",
     affLink: "https://haoze.v2yunvipaff.com/#/?code=trJG2874",
-    rank: 14,
+    rank: 15,
     noLimit: false,
     hasTrial: false,
     tgGroup: "https://t.me/lizione",
@@ -195,7 +208,7 @@ const airports = [
     features: ["BGP+IEPL", "不限时套餐", "1倍率无虚耗", "全节点解锁"],
     desc: "高质量BGP中转和IEPL专线混合架构，不限时大流量套餐性价比突出，晚高峰运行极速不卡顿。",
     affLink: "https://kjlq01.gsyvipaff.cc/#/?code=b1OTkTeL",
-    rank: 15,
+    rank: 16,
     noLimit: true,
     hasTrial: false,
     tgGroup: "https://t.me/guangshuyun",
@@ -208,7 +221,7 @@ const airports = [
     features: ["智能调度", "8K秒开", "流媒体优化", "不限时"],
     desc: "专为4K/8K超清流媒体进行优化，晚高峰吞吐能力极强。按量付费不限时，稳定性和速度都属第一梯队。",
     affLink: "https://haozevpn.gcvipaff.cc/#/?code=WRQJc2v4",
-    rank: 16,
+    rank: 17,
     noLimit: true,
     hasTrial: false,
     tgGroup: "https://t.me/quanqiuyun",
@@ -221,7 +234,7 @@ const airports = [
     features: ["IEPL物理专线", "不限设备", "Trojan防封锁", "不限时"],
     desc: "全线搭载防封锁极佳的Trojan协议与物理专线，支持无限设备同时在线。晚高峰速率有保障。",
     affLink: "https://wuyou202001.xdmvipaff.cc/#/?code=olWCiAhj",
-    rank: 17,
+    rank: 18,
     noLimit: true,
     hasTrial: false,
     tgGroup: "https://t.me/xingdaomeng"
@@ -233,7 +246,7 @@ const airports = [
     features: ["三网IEPL", "千兆大带宽", "原生IP解锁", "支持不限时"],
     desc: "搭载三网IEPL内网专线出口，晚高峰实测能跑满千兆带宽。原生IP解锁，完美满足风控AI与流媒体需求。",
     affLink: "https://store.yyds2-doraemon.site/login/register?invite_code=5VxQMw0k",
-    rank: 18,
+    rank: 19,
     noLimit: true,
     hasTrial: false,
     tgGroup: ""
@@ -245,7 +258,7 @@ const airports = [
     features: ["自研客户端", "有免费试用", "多节点覆盖", "一键连接"],
     desc: "提供专业的自研客户端以及新用户免费试用额度，操作门槛极低，适合小白用户一键完成科学上网。",
     affLink: "https://haoze.v2yunvipaff.com/#/?code=trJG2874",
-    rank: 19,
+    rank: 20,
     noLimit: false,
     hasTrial: true,
     tgGroup: "https://t.me/dageyun"
@@ -257,7 +270,7 @@ const airports = [
     features: ["Shadowsocks", "专线中转", "多端自适应", "安全稳定"],
     desc: "高端中转传输加上Shadowsocks原生链路，提供极其纯净安全的连接质量，有效抵抗封锁，风控表现优秀。",
     affLink: "https://flycat.flycatvipaff.cc/#/?code=1arEKHqh",
-    rank: 20,
+    rank: 21,
     noLimit: false,
     hasTrial: false,
     tgGroup: "https://t.me/longmaoyun"
@@ -269,7 +282,7 @@ const airports = [
     features: ["BGP多线中转", "支持不限时", "高速平稳", "全节点解锁"],
     desc: "采用BGP多线网络，保证了国内大部分省市都有极快的连接响应速度。提供按量付费不限时套餐。",
     affLink: "https://bbb.jichang.best/#/register?code=o4I4kToe",
-    rank: 21,
+    rank: 22,
     noLimit: true,
     hasTrial: false,
     tgGroup: "https://t.me/feiniaojichang"
@@ -281,7 +294,7 @@ const airports = [
     features: ["隧道中转", "支持不限时", "大带宽秒开", "性价比高"],
     desc: "百兆/千兆大带宽隧道接入，支持不限时套餐。看视频及浏览社交媒体极其流畅，具有极高性价比。",
     affLink: "https://shanhai.sbs/#/register?code=qVTbPfWP",
-    rank: 22,
+    rank: 23,
     noLimit: true,
     hasTrial: false,
     tgGroup: ""
@@ -293,7 +306,7 @@ const airports = [
     features: ["跨境物理专线", "高防中转", "稳定老厂", "多平台优化"],
     desc: "知名老牌机场，物理专线直连，虽然年付起步但稳定性在业内名列前茅，延迟低、无任何卡顿波动。",
     affLink: "https://gnt001.gntvipaff.cc/#/?code=j1ufpE44",
-    rank: 23,
+    rank: 24,
     noLimit: false,
     hasTrial: false,
     tgGroup: "https://t.me/flowercloud"
@@ -616,41 +629,42 @@ function build() {
   const pinnedAirports = sortedAirports.slice(0, 3);
   const pinnedAirportListMarkup = pinnedAirports.map(ap => {
     const tagsMarkup = ap.features.slice(0, 3).map(f => `<span class="feature-tag">${f}</span>`).join('');
-    let rankBadge = `<span class="compare-rank">${ap.rank}</span>`;
-    if (ap.rank === 1) rankBadge = `<span class="compare-rank rank-1">🥇</span>`;
-    else if (ap.rank === 2) rankBadge = `<span class="compare-rank rank-2">🥈</span>`;
-    else if (ap.rank === 3) rankBadge = `<span class="compare-rank rank-3">🥉</span>`;
+    let rankBadge = `Top ${ap.rank}`;
+    if (ap.rank === 1) rankBadge = `🥇 Top 1`;
+    else if (ap.rank === 2) rankBadge = `🥈 Top 2`;
+    else if (ap.rank === 3) rankBadge = `🥉 Top 3`;
 
     const avatarHTML = ap.logo 
-      ? `<div class="airport-list-avatar" style="padding:0;overflow:hidden;background:transparent;"><img src="${ap.logo}" alt="${ap.name} Logo" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" loading="lazy"></div>`
-      : `<div class="airport-list-avatar" style="background: var(--accent); color: white;">${ap.name[0]}</div>`;
+      ? `<div class="airport-avatar" style="padding:0;overflow:hidden;background:transparent;"><img src="${ap.logo}" alt="${ap.name} Logo" style="width:100%;height:100%;object-fit:cover;border-radius:10px;" loading="lazy"></div>`
+      : `<div class="airport-avatar" style="background: var(--accent); color: white; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: 700; border-radius: 10px;">${ap.name[0]}</div>`;
 
     return `
-      <div class="airport-list-item pinned-item">
-        <div class="airport-list-left">
-          <div class="airport-list-rank">${rankBadge}</div>
+      <div class="airport-card pinned-card">
+        <div class="airport-card-header">
           ${avatarHTML}
-          <div class="airport-list-name-section">
-            <h3 class="airport-list-name" style="display: flex; align-items: center; gap: 0.5rem;">
+          <div class="airport-meta-info">
+            <h3 class="airport-name" style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
               ${ap.name}
-              <span class="pinned-badge" style="background: #fff0f0; color: #ff4d4f; font-size: 0.7rem; padding: 1px 6px; border-radius: 4px; border: 1px solid #ffccc7;">置顶推荐</span>
+              <span class="pinned-badge" style="background: #fff0f0; color: #ff4d4f; font-size: 0.7rem; padding: 1px 6px; border-radius: 4px; border: 1px solid #ffccc7; font-weight: normal;">置顶推荐</span>
             </h3>
-            <span class="airport-list-sub">综合评分: ${(10 - ap.rank*0.1).toFixed(1)} / 10</span>
+            <span class="airport-card-badge badge-recom" style="display: flex; align-items: center; gap: 0.35rem;">
+              ${rankBadge} &nbsp;|&nbsp; 评分: ${(10 - ap.rank*0.1).toFixed(1)}
+            </span>
           </div>
         </div>
-        
-        <div class="airport-list-middle">
-          <div class="airport-list-tags">${tagsMarkup}</div>
-          <p class="airport-list-desc">${ap.desc}</p>
-        </div>
-        
-        <div class="airport-list-right">
-          <div class="airport-list-price">
-            <span class="price-val">￥${ap.price}</span> /月起
+        <div class="airport-card-body">
+          <div class="airport-features">
+            ${tagsMarkup}
           </div>
-          <div class="airport-list-actions">
-            <a href="posts/${ap.slug}.html" class="list-btn btn-review" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">阅读评测</a>
-            <a href="${ap.affLink}" target="_blank" rel="nofollow" class="list-btn btn-go" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">官网注册</a>
+          <p class="airport-desc">${ap.desc}</p>
+        </div>
+        <div class="airport-card-footer">
+          <div class="airport-price">
+            <span>￥${ap.price}</span> / 月起
+          </div>
+          <div style="display: flex; gap: 0.5rem;">
+            <a href="posts/${ap.slug}.html" class="airport-btn" style="background-color: var(--badge-bg); color: var(--text-secondary);">评测</a>
+            <a href="${ap.affLink}" target="_blank" rel="nofollow" class="airport-btn">注册官网</a>
           </div>
         </div>
       </div>

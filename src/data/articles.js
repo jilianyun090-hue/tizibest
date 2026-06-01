@@ -343,6 +343,16 @@ const articles = [
     content: "GENERATE_AIRPORT_REVIEW"
   },
   {
+    slug: "bianjieyun-review",
+    title: "2026 边界云机场评测：高性价比IEPL企业级专线稳定加速翻墙推荐",
+    description: "深度测试边界云机场。提供高性价比IEPL企业级专线。晚高峰稳定优化，支持大部分主流流媒体和ChatGPT解锁，支持UDP，并提供3天无理由退款保障。",
+    keywords: "边界云,边界云评测,IEPL专线机场,企业级专线,翻墙机场推荐",
+    category: "机场评测推荐",
+    tags: ["边界云", "IEPL专线", "流媒体解锁", "退款保障"],
+    date: "2026-05-04",
+    content: "GENERATE_AIRPORT_REVIEW"
+  },
+  {
     slug: "kedajiasudu-review",
     title: "2026 可达加速度机场评测：混合隧道多线路负载与高性价比套餐",
     description: "针对可达加速度机场的详细测评。分析多地BGP入口隧道与负载均衡策略，最低10元/月起提供高性价比的日常科学上网服务。",
