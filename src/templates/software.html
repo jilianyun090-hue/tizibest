@@ -58,11 +58,73 @@
         <p style="color: var(--text-secondary); margin-bottom: 2rem;">为了方便大家快速配置订阅出海，我们整理了 Windows、macOS、Android、iOS 各大平台主流代理软件的官方下载链接及图文使用教程。请根据您的系统选择合适的软件。</p>
         
         <div class="software-grid">
-          
+
+          <!-- Clash Party -->
+          <div class="software-card">
+            <div class="software-img-wrapper">
+              <img src="https://clashmac.cn.com/img/logo/clash-party.webp" alt="Clash Party" class="software-img" onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/GUI-for-Cores/GUI.for.Clash/master/src/assets/applogo.png'">
+            </div>
+            <div class="software-content">
+              <div class="software-meta">
+                <span class="platform-badge platform-win">Windows</span>
+                <span class="platform-badge platform-mac">macOS</span>
+                <span class="software-status status-classic">稳定工具</span>
+              </div>
+              <h2 class="software-title">Clash Party</h2>
+              <p class="software-desc">基于开源 Clash 项目深度定制的桌面端分支版。在瞬息万变的网络环境中，它坚持"稳定大于一切"的设计理念，特别适合追求极致稳定性的用户。兼容性强，支持主流机场的所有订阅格式，内置强大的规则分流引擎。</p>
+
+              <div class="software-actions">
+                <a href="https://github.com/GUI-for-Cores/GUI.for.Clash/releases" target="_blank" rel="nofollow" class="soft-btn soft-btn-download">GitHub 官方下载</a>
+                <a href="posts/clash-party-tutorial.html" class="soft-btn soft-btn-doc">详细教程</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Clash Mi -->
+          <div class="software-card">
+            <div class="software-img-wrapper">
+              <img src="https://clashmac.cn.com/img/logo/clashmi.webp" alt="Clash Mi" class="software-img" onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/KaringX/clashmi/main/assets/icon.png'">
+            </div>
+            <div class="software-content">
+              <div class="software-meta">
+                <span class="platform-badge platform-win">Windows</span>
+                <span class="platform-badge platform-mac">macOS</span>
+                <span class="software-status">内核增强</span>
+              </div>
+              <h2 class="software-title">Clash Mi</h2>
+              <p class="software-desc">基于 Mihomo（Clash Meta）核心的代理客户端，界面简洁、操作直观。极致精简，无多余动画与广告；内存占用仅为同类 Electron 框架软件的不到三分之一；完美发挥 Mihomo 内核在流媒体解锁与边缘分流上的优势，支持复杂 YAML 自定义配置。</p>
+
+              <div class="software-actions">
+                <a href="https://github.com/KaringX/clashmi/releases" target="_blank" rel="nofollow" class="soft-btn soft-btn-download">GitHub 官方下载</a>
+                <a href="posts/clashmi-tutorial.html" class="soft-btn soft-btn-doc">详细教程</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Shadowrocket -->
+          <div class="software-card">
+            <div class="software-img-wrapper">
+              <img src="https://clashmac.cn.com/img/logo/Shadowrocket.webp" alt="Shadowrocket 小火箭" class="software-img" onerror="this.src='assets/images/shadowrocket.png'">
+            </div>
+            <div class="software-content">
+              <div class="software-meta">
+                <span class="platform-badge platform-ios">iOS / iPadOS</span>
+                <span class="software-status status-ios">iOS必备</span>
+              </div>
+              <h2 class="software-title">Shadowrocket (小火箭)</h2>
+              <p class="software-desc">iOS 平台最经典的“国民级”规则代理工具。性能强劲稳定，协议支持极度全面，能无缝解析并自动导入各大机场的订阅链接。操作界面极其傻瓜化，适合绝大多数苹果用户。</p>
+
+              <div class="software-actions">
+                <a href="https://apps.apple.com/us/app/shadowrocket/id932747118" target="_blank" rel="nofollow" class="soft-btn soft-btn-download">App Store 购买下载</a>
+                <a href="posts/shadowrocket-tutorial.html" class="soft-btn soft-btn-doc">详细教程</a>
+              </div>
+            </div>
+          </div>
+
           <!-- Clash Verge Rev -->
           <div class="software-card">
             <div class="software-img-wrapper">
-              <img src="assets/images/clash-verge.png" alt="Clash Verge Rev 界面示意图" class="software-img">
+              <img src="https://clashmac.cn.com/img/logo/clash-verge-rev.webp" alt="Clash Verge Rev" class="software-img" onerror="this.src='assets/images/clash-verge.png'">
             </div>
             <div class="software-content">
               <div class="software-meta">
@@ -72,52 +134,10 @@
               </div>
               <h2 class="software-title">Clash Verge Rev</h2>
               <p class="software-desc">基于 Tauri 架构开发的全新一代 Clash 桌面客户端。内置 Mihomo (Meta) 核心，全面兼容旧版 Clash Verge，内存占用极小，完美支持 VLESS、Reality、Hysteria2 等最新加密协议，界面高雅精美，原生支持中文。</p>
-              
-              <div class="software-steps">
-                <div class="step-title">⚙️ 快速配置步骤：</div>
-                <ol>
-                  <li>从机场后台复制 <strong>Clash 订阅链接</strong>。</li>
-                  <li>打开软件，点击左侧的 <strong>Profiles</strong> 选项卡。</li>
-                  <li>在顶部输入框粘贴订阅链接，点击右侧的 <strong>Import</strong>。</li>
-                  <li>下载完成后，双击激活该订阅文件（显示绿色）。</li>
-                  <li>进入 <strong>Proxies</strong> 页面选择节点，并在 <strong>Settings</strong> 开启 <strong>System Proxy</strong> 系统代理开关。</li>
-                </ol>
-              </div>
-              
+
               <div class="software-actions">
                 <a href="https://github.com/clash-verge-rev/clash-verge-rev/releases" target="_blank" rel="nofollow" class="soft-btn soft-btn-download">GitHub 官方下载</a>
-                <a href="posts/clash-verge-rev-tutorial.html" class="soft-btn soft-btn-doc">详细保姆级教程</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Shadowrocket -->
-          <div class="software-card">
-            <div class="software-img-wrapper">
-              <img src="assets/images/shadowrocket.png" alt="Shadowrocket 小火箭界面示意图" class="software-img">
-            </div>
-            <div class="software-content">
-              <div class="software-meta">
-                <span class="platform-badge platform-ios">iOS / iPadOS</span>
-                <span class="software-status status-ios">iOS必备</span>
-              </div>
-              <h2 class="software-title">Shadowrocket (小火箭)</h2>
-              <p class="software-desc">iOS 平台最经典的“国民级”规则代理工具。性能强劲稳定，协议支持极度全面，能无缝解析并自动导入各大机场的订阅链接。操作界面极其傻瓜化，适合绝大多数苹果用户。</p>
-              
-              <div class="software-steps">
-                <div class="step-title">⚙️ 快速配置步骤：</div>
-                <ol>
-                  <li>由于政策原因，需登录<strong>非中国大陆区的 Apple ID</strong> 并在 App Store 购买下载小火箭。</li>
-                  <li>登录机场后台，复制订阅链接。</li>
-                  <li>打开 Shadowrocket，点击右上角 <strong>＋</strong>，类型选择 <strong>Subscribe</strong>。</li>
-                  <li>在 <strong>URL</strong> 中粘贴订阅链接并保存，回到主页即可看到节点列表。</li>
-                  <li>开启顶部“未连接”开关，同意安装 VPN 描述文件，即可开启代理。</li>
-                </ol>
-              </div>
-              
-              <div class="software-actions">
-                <a href="https://apps.apple.com/us/app/shadowrocket/id932747118" target="_blank" rel="nofollow" class="soft-btn soft-btn-download">App Store 购买下载</a>
-                <a href="posts/shadowrocket-tutorial.html" class="soft-btn soft-btn-doc">节点配置教程</a>
+                <a href="posts/clash-verge-rev-tutorial.html" class="soft-btn soft-btn-doc">详细教程</a>
               </div>
             </div>
           </div>
@@ -125,7 +145,7 @@
           <!-- v2rayN -->
           <div class="software-card">
             <div class="software-img-wrapper">
-              <img src="assets/images/v2rayn.png" alt="v2rayN 界面示意图" class="software-img">
+              <img src="https://clashmac.cn.com/img/logo/v2rayn.webp" alt="v2rayN" class="software-img" onerror="this.src='assets/images/v2rayn.png'">
             </div>
             <div class="software-content">
               <div class="software-meta">
@@ -134,21 +154,10 @@
               </div>
               <h2 class="software-title">v2rayN (Windows)</h2>
               <p class="software-desc">Windows 系统下最为经典、低调且强大的核心代理客户端。对新底层协议适配速度极快，无内存泄漏风险，能够承载海量并发连接，非常适合极客玩家和需要长时间稳定工作的商务用户。</p>
-              
-              <div class="software-steps">
-                <div class="step-title">⚙️ 快速配置步骤：</div>
-                <ol>
-                  <li>复制机场的 <strong>v2ray 订阅地址</strong>。</li>
-                  <li>打开 v2rayN，点击顶部菜单的 <strong>订阅分组 -> 订阅分组设置</strong>，点击“添加”。</li>
-                  <li>填写别名，并在 <strong>可选地址(url)</strong> 中粘贴订阅链接，点击“确定”。</li>
-                  <li>返回主页，点击 <strong>订阅分组 -> 更新全部订阅(不通过代理)</strong> 即可加载节点。</li>
-                  <li>右键右下角托盘图标，将 <strong>系统代理</strong> 设为“自动配置系统代理”，路由模式推荐“绕过大陆”。</li>
-                </ol>
-              </div>
-              
+
               <div class="software-actions">
                 <a href="https://github.com/2dust/v2rayN/releases" target="_blank" rel="nofollow" class="soft-btn soft-btn-download">GitHub 官方下载</a>
-                <a href="posts/v2rayn-tutorial.html" class="soft-btn soft-btn-doc">使用教程</a>
+                <a href="posts/v2rayn-tutorial.html" class="soft-btn soft-btn-doc">详细教程</a>
               </div>
             </div>
           </div>
@@ -156,7 +165,7 @@
           <!-- Clash Meta Android -->
           <div class="software-card">
             <div class="software-img-wrapper">
-              <img src="assets/images/clash-meta.png" alt="Clash Meta Android 界面示意图" class="software-img">
+              <img src="https://clashmac.cn.com/img/logo/clash-meta-for-android.webp" alt="Clash Meta Android" class="software-img" onerror="this.src='assets/images/clash-meta.png'">
             </div>
             <div class="software-content">
               <div class="software-meta">
@@ -164,27 +173,33 @@
                 <span class="software-status">安卓首选</span>
               </div>
               <h2 class="software-title">Clash Meta (Android)</h2>
-              <p class="software-desc">安卓端（目前已更名为 Mihomo for Android）功能最强大、对新式协议支持最完美的科学上网神器。内置高性能 Meta 内核，相比旧版 Clash for Android 具有更优越的防断连性能与路由分流策略。</p>
-              
-              <div class="software-steps">
-                <div class="step-title">⚙️ 快速配置步骤：</div>
-                <ol>
-                  <li>在手机浏览器中登录机场后台，复制 Clash 订阅链接。</li>
-                  <li>打开 Clash Meta 客户端，进入 <strong>配置（Profiles）</strong> 菜单。</li>
-                  <li>点击右上角 <strong>＋</strong>，选择 <strong>URL 导入</strong>。</li>
-                  <li>输入备注并粘贴链接，点击保存后等待订阅文件配置下载完成。</li>
-                  <li>选中该配置，返回主界面点击 <strong>启动（Start）</strong> 并在代理中选择节点即可。</li>
-                </ol>
-              </div>
-              
+              <p class="software-desc">安卓端（目前已更名为 Mihomo for Android）功能最强大、对新式协议支持最完美的科学上网神器。内置高性能 Meta 内核，相比旧版 Clash for Android 具有更优越防断连性能与路由分流策略。</p>
+
               <div class="software-actions">
-                <a href="https://github.com/MetaCubeX/mihomo-party/releases" target="_blank" rel="nofollow" class="soft-btn soft-btn-download">GitHub 官方下载</a>
-                <a href="posts/clash-meta-android-tutorial.html" class="soft-btn soft-btn-doc">安卓配置指南</a>
+                <a href="https://github.com/MetaCubeX/ClashMetaForAndroid/releases" target="_blank" rel="nofollow" class="soft-btn soft-btn-download">GitHub 官方下载</a>
+                <a href="posts/clash-meta-android-tutorial.html" class="soft-btn soft-btn-doc">详细教程</a>
               </div>
             </div>
           </div>
 
-        </div>
+          <!-- Nekobox -->
+          <div class="software-card">
+            <div class="software-img-wrapper">
+              <img src="https://clashmac.cn.com/img/logo/nekobox.webp" alt="Nekobox 猫盒" class="software-img">
+            </div>
+            <div class="software-content">
+              <div class="software-meta">
+                <span class="platform-badge platform-android">Android</span>
+                <span class="software-status status-classic">极客全能</span>
+              </div>
+              <h2 class="software-title">Nekobox (猫盒)</h2>
+              <p class="software-desc">安卓全能王，基于 sing-box 核心开发，支持 VMess、VLESS、Trojan、Shadowsocks、Hysteria2、TUIC、NaïveProxy 等几乎所有主流协议，对新协议适配速度极快，是极客玩家必备工具。</p>
+              
+              <div class="software-actions">
+                <a href="https://github.com/MatsuriDayo/NekoBoxForAndroid/releases" target="_blank" rel="nofollow" class="soft-btn soft-btn-download">GitHub 官方下载</a>
+              </div>
+            </div>
+          </div></div>
       </section>
     </main>
   </div>
