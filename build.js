@@ -791,10 +791,131 @@ function build() {
     `;
   }).join('\n');
 
+  // --- SEO & INTERNAL LINKING HELPERS ---
+  const getSeoTags = (title, description, pageSlug) => {
+    const canonicalUrl = `https://vpns-top.com/${pageSlug}`;
+    return `
+  <meta name="geo.region" content="CN" />
+  <meta name="geo.placename" content="China" />
+  <meta name="language" content="zh-CN" />
+  <meta name="revisit-after" content="3 days" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="稳定机场推荐 - vpns-top.com" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:title" content="${title}">
+  <meta property="og:description" content="${description}">
+  <meta property="og:url" content="${canonicalUrl}">
+  <meta name="twitter:card" content="summary_large_image" />
+    `;
+  };
+
+  const getPostSeoTags = (title, description, slug) => {
+    const canonicalUrl = `https://vpns-top.com/posts/${slug}.html`;
+    return `
+  <meta name="geo.region" content="CN" />
+  <meta name="geo.placename" content="China" />
+  <meta name="language" content="zh-CN" />
+  <meta name="revisit-after" content="3 days" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="稳定机场推荐 - vpns-top.com" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:title" content="${title}">
+  <meta property="og:description" content="${description}">
+  <meta property="og:url" content="${canonicalUrl}">
+  <meta name="twitter:card" content="summary_large_image" />
+    `;
+  };
+
+  const sidebarLadderRecs = `
+    <div class="widget rec-widget">
+      <h3 class="widget-title">科学上网稳定梯子推荐</h3>
+      <div class="ladder-rec-sidebar" style="display: flex; flex-direction: column; gap: 0.75rem;">
+        <a href="{{rootPath}}posts/shunyun-review.html" class="rec-sidebar-item" style="display: block; padding: 0.75rem; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-secondary); text-decoration: none; transition: var(--transition);">
+          <div style="font-weight: 700; font-size: 0.9rem; color: var(--text-primary); margin-bottom: 0.25rem;">🥇 瞬云 — 无倍率稳定梯子</div>
+          <div style="font-size: 0.75rem; color: var(--text-secondary);">全站一倍率，Anycast直连专线</div>
+        </a>
+        <a href="{{rootPath}}posts/huanyuyun-review.html" class="rec-sidebar-item" style="display: block; padding: 0.75rem; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-secondary); text-decoration: none; transition: var(--transition);">
+          <div style="font-weight: 700; font-size: 0.9rem; color: var(--text-primary); margin-bottom: 0.25rem;">🥈 寰宇云 — 便宜按量付费梯子</div>
+          <div style="font-size: 0.75rem; color: var(--text-secondary);">BGP中转，性价比出海备份首选</div>
+        </a>
+        <a href="{{rootPath}}posts/jilianyun-review.html" class="rec-sidebar-item" style="display: block; padding: 0.75rem; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-secondary); text-decoration: none; transition: var(--transition);">
+          <div style="font-weight: 700; font-size: 0.9rem; color: var(--text-primary); margin-bottom: 0.25rem;">🥉 极连云 — IEPL专线稳定梯子</div>
+          <div style="font-size: 0.75rem; color: var(--text-secondary);">IEPL企业专线，不限连接设备数</div>
+        </a>
+        <a href="{{rootPath}}posts/guangnianti-review.html" class="rec-sidebar-item" style="display: block; padding: 0.75rem; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-secondary); text-decoration: none; transition: var(--transition);">
+          <div style="font-weight: 700; font-size: 0.9rem; color: var(--text-primary); margin-bottom: 0.25rem;">✨ 光年梯 — 老牌大流量专线梯子</div>
+          <div style="font-size: 0.75rem; color: var(--text-secondary);">老牌机场，不限速不限时大流量</div>
+        </a>
+      </div>
+    </div>
+  `;
+
+  const postLadderRecs = `
+<section class="ladder-recommendation-block" style="margin-top: 2.5rem; padding: 1.5rem; border: 1.5px dashed var(--accent); border-radius: 12px; background-color: var(--accent-light);">
+  <h3 style="margin-top: 0; color: var(--accent); font-size: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-family: var(--font-heading);">
+    🚀 2026年科学上网稳定翻墙梯子推荐
+  </h3>
+  <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.6;">
+    如果您正在寻找速度快、连接稳定、且不易跑路的高速机场，以下是本站长期测试后精心筛选的几款<strong>2026年最值得选择的稳定翻墙梯子推荐</strong>。支持Clash、Shadowrocket等主流客户端，适合日常出海开发、学术科研及流媒体解锁：
+  </p>
+  <div class="ladder-rec-grid" style="display: grid; grid-template-columns: 1fr; gap: 1rem;">
+    <!-- 瞬云 -->
+    <div class="ladder-rec-item" style="background: var(--bg-secondary); padding: 1rem; border-radius: 8px; border: 1px solid var(--border); transition: transform 0.2s;">
+      <h4 style="margin: 0 0 0.5rem 0; font-size: 1rem; display: flex; align-items: center; justify-content: space-between; font-family: var(--font-heading);">
+        <a href="{{rootPath}}posts/shunyun-review.html" style="font-weight: 700; color: var(--text-primary);">🥇 瞬云机场 — 无倍率性价比高速直连梯子</a>
+        <span style="font-size: 0.8rem; background: var(--success-bg); color: var(--success-text); padding: 2px 6px; border-radius: 4px; font-weight: normal;">强烈推荐</span>
+      </h4>
+      <p style="margin: 0; font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">
+        提供超多优质<strong>Anycast直连专线</strong>，无虚标倍率，高性价比不限时流量包。节点速度极佳，晚高峰4K秒开。适合日常娱乐与出海学习。<a href="{{rootPath}}posts/shunyun-review.html" style="color: var(--accent); text-decoration: underline; margin-left: 5px;">查看瞬云测评 ↗</a>
+      </p>
+    </div>
+    <!-- 极连云 -->
+    <div class="ladder-rec-item" style="background: var(--bg-secondary); padding: 1rem; border-radius: 8px; border: 1px solid var(--border); transition: transform 0.2s;">
+      <h4 style="margin: 0 0 0.5rem 0; font-size: 1rem; display: flex; align-items: center; justify-content: space-between; font-family: var(--font-heading);">
+        <a href="{{rootPath}}posts/jilianyun-review.html" style="font-weight: 700; color: var(--text-primary);">🥈 极连云 — IEPL专线不限设备稳定出海梯子</a>
+        <span style="font-size: 0.8rem; background: var(--accent-light); color: var(--accent-text); padding: 2px 6px; border-radius: 4px; font-weight: normal;">不限设备</span>
+      </h4>
+      <p style="margin: 0; font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">
+        采用<strong>IEPL物理专线</strong>加速，不限制设备连接数量，专为ChatGPT、Claude及流媒体（Netflix/Disney+）进行原生IP解锁。晚高峰延迟极低，翻墙首选。<a href="{{rootPath}}posts/jilianyun-review.html" style="color: var(--accent); text-decoration: underline; margin-left: 5px;">查看极连云测评 ↗</a>
+      </p>
+    </div>
+    <!-- 寰宇云 -->
+    <div class="ladder-rec-item" style="background: var(--bg-secondary); padding: 1rem; border-radius: 8px; border: 1px solid var(--border); transition: transform 0.2s;">
+      <h4 style="margin: 0 0 0.5rem 0; font-size: 1rem; display: flex; align-items: center; justify-content: space-between; font-family: var(--font-heading);">
+        <a href="{{rootPath}}posts/huanyuyun-review.html" style="font-weight: 700; color: var(--text-primary);">🥉 寰宇云 — 便宜按量付费高性价比备用梯子</a>
+        <span style="font-size: 0.8rem; background: var(--badge-bg); color: var(--badge-text); padding: 2px 6px; border-radius: 4px; font-weight: normal;">备用推荐</span>
+      </h4>
+      <p style="margin: 0; font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">
+        主打低门槛与按量付费，年付89元起。提供优质<strong>BGP中转加速网络</strong>，性价比极其突出，非常适合轻度科学上网用户或作为常备的防跑路防断连备用梯子。<a href="{{rootPath}}posts/huanyuyun-review.html" style="color: var(--accent); text-decoration: underline; margin-left: 5px;">查看寰宇云测评 ↗</a>
+      </p>
+    </div>
+    <!-- 光年梯 -->
+    <div class="ladder-rec-item" style="background: var(--bg-secondary); padding: 1rem; border-radius: 8px; border: 1px solid var(--border); transition: transform 0.2s;">
+      <h4 style="margin: 0 0 0.5rem 0; font-size: 1rem; display: flex; align-items: center; justify-content: space-between; font-family: var(--font-heading);">
+        <a href="{{rootPath}}posts/guangnianti-review.html" style="font-weight: 700; color: var(--text-primary);">✨ 光年梯 — 老牌稳定物理专线大流量梯子</a>
+        <span style="font-size: 0.8rem; background: var(--success-bg); color: var(--success-text); padding: 2px 6px; border-radius: 4px; font-weight: normal;">老牌稳定</span>
+      </h4>
+      <p style="margin: 0; font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">
+        行业多年的<strong>老牌IEPL专线机场</strong>，在敏感期依然有强劲的抗干扰和容灾性能。提供大流量且支持不限时套餐，晚高峰大带宽下载顺畅，体验极佳。<a href="{{rootPath}}posts/guangnianti-review.html" style="color: var(--accent); text-decoration: underline; margin-left: 5px;">查看光年梯测评 ↗</a>
+      </p>
+    </div>
+  </div>
+</section>
+  `;
+
   // 8. COMPILE HOMEPAGE (index.html)
   const homeTemplatePath = path.join(__dirname, 'src', 'templates', 'homepage.html');
   if (fs.existsSync(homeTemplatePath)) {
     let homeHTML = fs.readFileSync(homeTemplatePath, 'utf-8');
+    
+    // Extract title & description for SEO
+    const titleMatch = homeHTML.match(/<title>([\s\S]+?)<\/title>/i);
+    const descMatch = homeHTML.match(/<meta\s+name=["']description["']\s+content=["']([\s\S]+?)["']/i);
+    const pageTitle = titleMatch ? titleMatch[1] : '稳定机场推荐';
+    const pageDesc = descMatch ? descMatch[1] : '';
+    const seoTags = getSeoTags(pageTitle, pageDesc, '');
     
     // Perform replacements
     homeHTML = homeHTML.replace(/\{\{pinnedAirportList\}\}/g, pinnedAirportListMarkup);
@@ -803,6 +924,8 @@ function build() {
     homeHTML = homeHTML.replace(/\{\{categoriesWidget\}\}/g, categoriesWidgetMarkup);
     homeHTML = homeHTML.replace(/\{\{tagCloudWidget\}\}/g, tagCloudMarkup);
     homeHTML = homeHTML.replace(/\{\{searchIndex\}\}/g, searchIndexJSON);
+    homeHTML = homeHTML.replace(/\{\{seoTags\}\}/g, seoTags);
+    homeHTML = homeHTML.replace(/\{\{sidebarLadderRecs\}\}/g, sidebarLadderRecs.replace(/\{\{rootPath\}\}/g, ''));
     
     homeHTML = homeHTML.replace('</body>', `${seoHiddenBlock}\n</body>`);
     fs.writeFileSync(path.join(__dirname, 'index.html'), homeHTML, 'utf-8');
@@ -816,8 +939,16 @@ function build() {
   if (fs.existsSync(gridTemplatePath)) {
     let gridHTML = fs.readFileSync(gridTemplatePath, 'utf-8');
     
+    // Extract title & description for SEO
+    const titleMatch = gridHTML.match(/<title>([\s\S]+?)<\/title>/i);
+    const descMatch = gridHTML.match(/<meta\s+name=["']description["']\s+content=["']([\s\S]+?)["']/i);
+    const pageTitle = titleMatch ? titleMatch[1] : '2026年机场评测推荐列表';
+    const pageDesc = descMatch ? descMatch[1] : '';
+    const seoTags = getSeoTags(pageTitle, pageDesc, 'airport.html');
+    
     gridHTML = gridHTML.replace(/\{\{airportList\}\}/g, airportListMarkup);
     gridHTML = gridHTML.replace(/\{\{searchIndex\}\}/g, searchIndexJSON);
+    gridHTML = gridHTML.replace(/\{\{seoTags\}\}/g, seoTags);
     
     gridHTML = gridHTML.replace('</body>', `${seoHiddenBlock}\n</body>`);
     fs.writeFileSync(path.join(__dirname, 'airport.html'), gridHTML, 'utf-8');
@@ -831,11 +962,20 @@ function build() {
   if (fs.existsSync(reviewsTemplatePath)) {
     let reviewsHTML = fs.readFileSync(reviewsTemplatePath, 'utf-8');
     
+    // Extract title & description for SEO
+    const titleMatch = reviewsHTML.match(/<title>([\s\S]+?)<\/title>/i);
+    const descMatch = reviewsHTML.match(/<meta\s+name=["']description["']\s+content=["']([\s\S]+?)["']/i);
+    const pageTitle = titleMatch ? titleMatch[1] : '稳定高速机场评测列表';
+    const pageDesc = descMatch ? descMatch[1] : '';
+    const seoTags = getSeoTags(pageTitle, pageDesc, 'reviews.html');
+    
     reviewsHTML = reviewsHTML.replace(/\{\{reviewArticles\}\}/g, reviewArticlesMarkup);
     reviewsHTML = reviewsHTML.replace(/\{\{popularArticles\}\}/g, popularArticlesList);
     reviewsHTML = reviewsHTML.replace(/\{\{categoriesWidget\}\}/g, categoriesWidgetMarkup);
     reviewsHTML = reviewsHTML.replace(/\{\{tagCloudWidget\}\}/g, tagCloudMarkup);
     reviewsHTML = reviewsHTML.replace(/\{\{searchIndex\}\}/g, searchIndexJSON);
+    reviewsHTML = reviewsHTML.replace(/\{\{seoTags\}\}/g, seoTags);
+    reviewsHTML = reviewsHTML.replace(/\{\{sidebarLadderRecs\}\}/g, sidebarLadderRecs.replace(/\{\{rootPath\}\}/g, ''));
     
     reviewsHTML = reviewsHTML.replace('</body>', `${seoHiddenBlock}\n</body>`);
     fs.writeFileSync(path.join(__dirname, 'reviews.html'), reviewsHTML, 'utf-8');
@@ -849,11 +989,20 @@ function build() {
   if (fs.existsSync(guidesTemplatePath)) {
     let guidesHTML = fs.readFileSync(guidesTemplatePath, 'utf-8');
     
+    // Extract title & description for SEO
+    const titleMatch = guidesHTML.match(/<title>([\s\S]+?)<\/title>/i);
+    const descMatch = guidesHTML.match(/<meta\s+name=["']description["']\s+content=["']([\s\S]+?)["']/i);
+    const pageTitle = titleMatch ? titleMatch[1] : '科学上网指南与技术科普专题';
+    const pageDesc = descMatch ? descMatch[1] : '';
+    const seoTags = getSeoTags(pageTitle, pageDesc, 'guides.html');
+    
     guidesHTML = guidesHTML.replace(/\{\{guideArticles\}\}/g, guideArticlesMarkup);
     guidesHTML = guidesHTML.replace(/\{\{popularArticles\}\}/g, popularArticlesList);
     guidesHTML = guidesHTML.replace(/\{\{categoriesWidget\}\}/g, categoriesWidgetMarkup);
     guidesHTML = guidesHTML.replace(/\{\{tagCloudWidget\}\}/g, tagCloudMarkup);
     guidesHTML = guidesHTML.replace(/\{\{searchIndex\}\}/g, searchIndexJSON);
+    guidesHTML = guidesHTML.replace(/\{\{seoTags\}\}/g, seoTags);
+    guidesHTML = guidesHTML.replace(/\{\{sidebarLadderRecs\}\}/g, sidebarLadderRecs.replace(/\{\{rootPath\}\}/g, ''));
     
     guidesHTML = guidesHTML.replace('</body>', `${seoHiddenBlock}\n</body>`);
     fs.writeFileSync(path.join(__dirname, 'guides.html'), guidesHTML, 'utf-8');
@@ -867,7 +1016,15 @@ function build() {
   if (fs.existsSync(softwareTemplatePath)) {
     let softwareHTML = fs.readFileSync(softwareTemplatePath, 'utf-8');
     
+    // Extract title & description for SEO
+    const titleMatch = softwareHTML.match(/<title>([\s\S]+?)<\/title>/i);
+    const descMatch = softwareHTML.match(/<meta\s+name=["']description["']\s+content=["']([\s\S]+?)["']/i);
+    const pageTitle = titleMatch ? titleMatch[1] : '翻墙加速软件客户端下载与配置新手教程';
+    const pageDesc = descMatch ? descMatch[1] : '';
+    const seoTags = getSeoTags(pageTitle, pageDesc, 'software.html');
+    
     softwareHTML = softwareHTML.replace(/\{\{searchIndex\}\}/g, searchIndexJSON);
+    softwareHTML = softwareHTML.replace(/\{\{seoTags\}\}/g, seoTags);
     
     softwareHTML = softwareHTML.replace('</body>', `${seoHiddenBlock}\n</body>`);
     fs.writeFileSync(path.join(__dirname, 'software.html'), softwareHTML, 'utf-8');
@@ -900,6 +1057,9 @@ function build() {
       finalContent = finalContent.replace(/\{\{compareTableRows\}\}/g, compareTableRowsMarkupForPosts);
       finalContent = finalContent.replace(/\{\{airportCards\}\}/g, airportCardsMarkupForPosts);
       
+      // Append in-content ladder recommendation widget block
+      finalContent = finalContent + "\n" + postLadderRecs;
+      
       const tocMarkup = generateTOC(finalContent);
       const tagBadgesMarkup = art.tags.map(t => `<span class="feature-tag">${t}</span>`).join('');
       
@@ -910,6 +1070,8 @@ function build() {
       } else if (art.category === '客户端配置教程') {
         categoryLink = 'software.html';
       }
+      
+      const seoTags = getPostSeoTags(art.title, art.description, art.slug);
       
       postHTML = postHTML.replace(/\{\{title\}\}/g, art.title);
       postHTML = postHTML.replace(/\{\{description\}\}/g, art.description);
@@ -924,6 +1086,8 @@ function build() {
       postHTML = postHTML.replace(/\{\{categoriesWidget\}\}/g, categoriesWidgetMarkupForPosts);
       postHTML = postHTML.replace(/\{\{tagCloudWidget\}\}/g, tagCloudMarkup);
       postHTML = postHTML.replace(/\{\{searchIndex\}\}/g, localSearchIndexJSON);
+      postHTML = postHTML.replace(/\{\{seoTags\}\}/g, seoTags);
+      postHTML = postHTML.replace(/\{\{sidebarLadderRecs\}\}/g, sidebarLadderRecs);
       
       // rootPath inside subfolder posts/ is '../'
       postHTML = postHTML.replace(/\{\{rootPath\}\}/g, '../');
