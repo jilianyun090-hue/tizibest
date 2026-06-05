@@ -230,4 +230,38 @@ document.addEventListener('DOMContentLoaded', () => {
     // Visual pointer style
     item.style.cursor = 'pointer';
   });
+
+  // === Sticky Sidebar ScrollSpy ===
+  const tocList = document.querySelector('.airport-toc-list');
+  if (tocList) {
+    const tocLinks = tocList.querySelectorAll('.toc-link');
+    const cards = document.querySelectorAll('.airport-list-item');
+    
+    const scrollSpy = () => {
+      let activeIndex = -1;
+      const scrollPosition = window.scrollY + 120; // 120px offset for header and spacing
+      
+      cards.forEach((card, index) => {
+        const top = card.getBoundingClientRect().top + window.scrollY;
+        if (scrollPosition >= top) {
+          activeIndex = index;
+        }
+      });
+      
+      tocLinks.forEach((link, index) => {
+        if (index === activeIndex) {
+          link.classList.add('active');
+          // Scroll link into view inside the sidebar if it overflows
+          link.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    };
+    
+    // Listen for scroll
+    window.addEventListener('scroll', scrollSpy);
+    // Initial call
+    scrollSpy();
+  }
 });

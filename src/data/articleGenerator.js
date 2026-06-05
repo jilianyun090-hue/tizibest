@@ -238,7 +238,21 @@ function generateClashMetaAndroidTutorial() {
 }
 
 function generateGeneralKnowledgeArticle(slug, title) {
-  let intro = `<p>本文将针对 <strong>${title}</strong> 展开深度且系统的科普探讨。科学上网（俗称翻墙）在学术检索、外贸开发、跨国社交和流媒体娱乐中已成为不可或缺的技能。但由于各种协议繁多、网络服务商参差不齐，了解底层的网络通信常识、避坑陷阱是每一位冲浪者的必备素养。本站编辑从多年从业经验和技术理论出发，为您梳理出本篇详实的深度解析指南。</p>`;
+  const introMap = {
+    'how-to-choose-stable-airport': `在当今互联网时代，无论是跨国开发、外贸业务，还是学术研究与日常娱乐，稳定且高速的网络出海通道早已成为刚需。然而面对市面上大大小小、参差不齐的科学上网机场，新手往往难以辨别其技术路线与品质，极易落入商家低价年付的跑路陷阱。本篇指南将从底层线路物理架构到日常消费决策，为您全面揭示如何科学挑选一款长期稳定、不掉线的翻墙机场。`,
+    'gfw-operation-principles': `作为科学上网的日常使用者，你或许常会思考：为什么有些境外网站直接提示无法访问，而现代代理软件又是如何绕过这种网络边界封锁的？这一切的核心都指向了国家防火长城（GFW）。本篇文章将深入浅出地剖析 GFW 的底层拦截机制（如 DNS 污染、IP 封锁与 DPI 深度包检测），并系统梳理现代主流科学上网协议的混淆与绕过对抗原理。`,
+    'what-is-iepl-iplc-private-line': `在选购各类科学上网机场套餐时，“IPLC/IEPL 国际专线”往往被奉为顶级品质的代名词，且套餐定价明显高于普通线路。为什么专线网络被称为出海链路的“天花板”？它在物理层面与常规公网直连或普通中转究竟有何不同？本文将带您深入剖析跨国物理专线的运行机制，揭秘为什么它们能在晚高峰及敏感时期依然坚如磐石。`,
+    'proxy-protocols-ss-trojan-vless-hysteria2': `网络加密与协议伪装是科学上网与防火长城（GFW）技术博弈的前线战场。从早期的 Shadowsocks 简单对称加密，到后来的 Trojan TLS 网页伪装，再到如今大热的 VLESS Reality 以及基于 UDP 拥塞控制的 Hysteria 2，加密协议经历了几代颠覆性演进。本文将带您全面科普各大主流协议的本质区别、安全指数与适用网络场景。`,
+    'clash-singbox-v2rayn-shadowrocket-comparison': `选购了优质的机场服务后，如何挑选一款高效、省电且规则健全的客户端代理软件是下一步的核心。Clash 强大的策略组规则分流、Sing-box 极致的轻量化表现、v2rayN 直观的配置面板，以及 Shadowrocket（小火箭）在 iOS 端的便利性，它们各自扮演着怎样的角色？本篇文章将全方位比对各大主流科学上网工具的优缺点与最佳适用场景。`,
+    'anti-exit-scam-airport-guide': `“刚买的包年套餐怎么突然打不开了？”这是许多科学上网用户经常遇到的维权痛点。由于机场行业的边缘性质与技术敏感度，服务商卷款跑路（俗称卷款跑路或关闭服务）屡见不鲜。为了让大家的网络资产与日常工作不受影响，本篇文章将深入剖析机场圈常见的诱导年付陷阱与运营套路，为您提供一套实用的防跑路月付避坑核心准则。`,
+    'setup-proxy-on-apple-tv-smart-tv': `随着 tvOS 17 系统正式引入对第三方代理软件的支持，在客厅大屏上无障碍观看 Netflix 4K、YouTube 高清以及 Disney+ 已经迎来了黄金期。除了在 Apple TV 端直接配置代理客户端，智能电视大屏翻墙还有哪些稳定、高效的局域网共享与软路由网关转发方案？本文将为您整理一套详尽的大屏出海网络配置教程。`,
+    'network-routing-cross-border-dev-work': `对于跨国软件开发团队、外贸业务骨干以及科研人员而言，日常使用的网络环境对响应速度和纯净度有着极其严苛的要求。如果所有流量都盲目走代理，不仅浪费流量，更会影响国内日常办公软件（如微信、钉钉）的使用体验。本篇指南将为您介绍如何通过双路由器桥接与全局代理规则配置，实现高效、流畅的跨国开发与外贸分流方案。`,
+    'solve-chatgpt-claude-access-denied': `由于 OpenAI 和 Anthropic 对服务地区实施了极为严格的地理位置风控，许多用户在访问 ChatGPT 或 Claude 时经常遭遇“Access Denied”、“Error 1020”或者登录后无法正常对话的尴尬处境。这些 AI 平台是如何进行代理检测与 IP 风控封禁的？我们该如何通过干净的原生住宅 IP 节点和清理策略完美解锁？本文将为您详细解答。`,
+    'netflix-disney-streaming-unlock-principles': `流媒体爱好者在观看 Netflix、Disney+ 或 HBO 等海外平台时，最怕遇到的提示就是“您似乎使用了代理或解锁工具，请关闭后重试”。为什么开了普通的代理依然无法观看完整内容？流媒体巨头是如何精准抓取并屏蔽机房 IP 的？什么是原生住宅 IP 节点的解锁机制？本文将为您深度解析流媒体解锁的底层原理。`,
+    'why-speedtest-looks-good-but-actual-experience-slow': `许多科学上网新手在选购机场时，往往会被 Telegram 频道中满屏闪烁绿色、跑满几百兆甚至上千兆的“华丽测速图”所震撼。然而，当他们实际购买并观看 YouTube 4K 视频时却经常卡顿转圈。这种测速数据与实际体验的巨大割裂是由多线程并发与单线程拉取的物理差异导致的。本文将为您科普这两者的本质区别与真实性能辨别法。`,
+    'share-computer-proxy-to-switch-ps5': `作为 Switch、PS5 或 Xbox 主机游戏玩家，在联机对战或者下载大型更新包时，常会遇到下载等待时间过长、联机丢包或 NAT 类型受限等折磨。在没有软路由的情况下，如何利用电脑上的 Clash 或 v2rayN 客户端将科学上网代理共享给同一局域网下的游戏主机？本篇文章将手把手教您如何通过局域网桥接实现主机满速下载与低延迟联机。`
+  };
+  let intro = `<p>${introMap[slug] || `本文将针对 <strong>${title}</strong> 展开深度且系统的科普探讨。科学上网（俗称翻墙）在学术检索、外贸开发、跨国社交和流媒体娱乐中已成为不可或缺的技能。但由于各种协议繁多、网络服务商参差不齐，了解底层的网络通信常识、避坑陷阱是每一位冲浪者的必备素养。本站编辑从多年从业经验和技术理论出发，为您梳理出本篇详实的深度解析指南。`}</p>`;
   
   if (slug === 'how-to-choose-stable-airport') {
     return `
@@ -426,17 +440,20 @@ function generateGeneralKnowledgeArticle(slug, title) {
 function generateAirportReviewArticle(ap) {
   const score = (10 - ap.rank * 0.1).toFixed(1);
   return `
-    <p>在 2026 年繁杂的科学上网服务市场中，<strong>${ap.name}</strong> 凭借其优异的连接质量和扎实的架构，在众多服务商中脱颖而出。本文将为您带来关于 ${ap.name} 的深度综合测评，包含其底层线路架构、最新套餐定价、多平台兼容性、延迟速度测试以及流媒体解锁报告，帮助您全方位评估这是否是最适合您的网络出海方案。本站所有测评均基于付费后的真实体验，确保无水份、不带偏见地呈现给广大读者。</p>
+    <p>经常在论坛和各大社群看到许多冲浪老铁发帖发问：<strong>“2026年了，到底还有哪些不跑路的稳定机场推荐？”</strong> 确实，随着防火长城（GFW）的日常探测手段不断升级，以前那种随便买个超低价代理节点就能安稳用一年的时代早已过去。现在的<strong>翻墙机场</strong>与<strong>科学上网机场</strong>市场鱼龙混杂，许多小作坊机场主跑路频繁，不仅令用户资金受损，更耽误了重要的学术研究或外贸业务。</p>
+    
+    <p>为了帮大家排忧解难，今天我们来深度测评一下近期的热门<strong>代理节点</strong>——<strong>${ap.name}</strong>。在我们的最新**机场排行**中，它是非常受关注的 **clash节点机场推荐** 选项之一。究竟这款加速服务在晚高峰的表现如何？到底算不算得上一款良心的**性价比机场**？接下来我们将从协议兼容性、流媒体与AI场景解锁、以及真实带宽测速等多个维度，带大家一探究竟！本站所有评测均基于编辑自费购买后的真实体验，确保无虚标、不带偏见地呈现给广大读者，是您挑选合适 **airport** 加速服务的重要参考。</p>
     
     <blockquote>
       <p><strong>🚨 官方正版入口声明：</strong>为了防止您误入假冒镜像网站或钓鱼网站，本站提供的链接均为直连 ${ap.name} 的官方防封官网：<a href="${ap.affLink}" target="_blank" rel="nofollow" style="color: var(--accent); text-decoration: underline; font-weight: bold;">点击此处访问 ${ap.name} 官网 ↗</a>。建议注册后及时收藏其最新发布页或加入其 TG 群组。</p>
     </blockquote>
 
-    <h2 id="arch-intro">一、${ap.name} 底层线路架构深度解析</h2>
+    <h2 id="arch-intro">一、${ap.name} 底层线路架构与代理解析协议深度评测</h2>
     <p>${ap.name} 目前在综合排名中荣登 <strong>Top ${ap.rank}</strong>。其技术架构非常扎实，主要特色在于以下几个核心维度：</p>
     <ul>
-      <li><strong>核心线路：</strong> 采用了 <strong>${ap.features.join(' + ')}</strong> 的组合。特别是其主推节点，数据直接在内网通过加密通道进行跨境传输。这种物理专线不仅拥有极佳的抗封锁表现，而且即使在国际大网遭遇严重波动的重大敏感时期，依然能实现零丢包和全天候的稳定连接。由于不经过公网网关检测，基本杜绝了 IP 被封锁的可能性。</li>
-      <li><strong>落地节点覆盖：</strong> 节点遍布香港 (HK)、日本 (JP)、台湾 (TW)、新加坡 (SG)、美国 (US) 以及英国、德国等多国核心数据中心，完美满足外贸商用、极客开发和日常追剧的多样化地理定位需求。部分节点还支持住宅原生 IP 的代理路由，极大地提高了海外网站访问的纯净度。</li>
+      <li><strong>核心线路：</strong> 采用了 <strong>${ap.features.join(' + ')}</strong> 的组合。特别是其主推节点，采用优质的 <strong>IEPL机场推荐</strong> 级别专线或 <strong>IPLC机场推荐</strong> 专线，数据直接在内网通过加密通道进行跨境传输。这种物理专线不仅拥有极佳的抗封锁表现，而且即使在重大敏感时期，依然能实现零丢包和全天候的稳定连接，是理想的 <strong>VPN替代</strong> 方案。</li>
+      <li><strong>协议兼容支持：</strong> 全站支持 <strong>Shadowsocks (SS)</strong>、<strong>Trojan</strong>、<strong>V2Ray (VLESS/VMess)</strong> 以及老牌的 <strong>SSR</strong> 等主流加密代理解析协议。无论您使用的是 Clash, Shadowrocket（小火箭）还是 Sing-box 客户端，均可一键导入，享受高隐蔽性的网络出海体验。</li>
+      <li><strong>落地节点覆盖：</strong> 节点遍布香港 (HK)、日本 (JP)、台湾 (TW)、新加坡 (SG)、美国 (US) 以及欧洲等多国核心数据中心，完美满足跨国开发、外贸电商和海外追剧的<strong>海外节点</strong>定位需求。</li>
       <li><strong>流量倍率控制：</strong> 郑重承诺全站所有日常节点均为 <strong>1.0倍率无虚标</strong>，彻底杜绝了某些不良机场面板显示 500G 实际用 100G 就消耗殆尽的虚假流量套路，让用户的每一分钱都实打实地花在刀刃上。</li>
     </ul>
 
@@ -459,22 +476,22 @@ function generateAirportReviewArticle(ap) {
             <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>轻量普及版</strong></td>
             <td style="padding: 0.75rem; border: 1px solid var(--border-color);">80GB - 120GB</td>
             <td style="padding: 0.75rem; border: 1px solid var(--border-color);">￥${ap.price}</td>
-            <td style="padding: 0.75rem; border: 1px solid var(--border-color);">${ap.noLimit ? '无设备数限制' : '限 2-3 台设备'}</td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color); font-weight: bold;">${ap.noLimit ? '无设备数限制' : '限 2-3 台设备'}</td>
             <td style="padding: 0.75rem; border: 1px solid var(--border-color);">个人学术检索、日常外贸开发工作与轻度社媒浏览。</td>
           </tr>
           <tr>
             <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>标准尊享版</strong></td>
             <td style="padding: 0.75rem; border: 1px solid var(--border-color);">250GB - 300GB</td>
             <td style="padding: 0.75rem; border: 1px solid var(--border-color);">￥${(parseFloat(ap.price) * 1.8).toFixed(2)}</td>
-            <td style="padding: 0.75rem; border: 1px solid var(--border-color);">${ap.noLimit ? '无设备数限制' : '限 5 设备'}</td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color); font-weight: bold;">${ap.noLimit ? '无设备数限制' : '限 5 设备'}</td>
             <td style="padding: 0.75rem; border: 1px solid var(--border-color);">YouTube 4K 秒开、Netflix 4K 重度追剧与大文件下载。</td>
           </tr>
           <tr>
             <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>按量不限时（特色）</strong></td>
             <td style="padding: 0.75rem; border: 1px solid var(--border-color);">一次性 200GB - 500GB</td>
             <td style="padding: 0.75rem; border: 1px solid var(--border-color);">￥${(parseFloat(ap.price) * 3.5).toFixed(2)} /一次性</td>
-            <td style="padding: 0.75rem; border: 1px solid var(--border-color);">永久有效不限设备</td>
-            <td style="padding: 0.75rem; border: 1px solid var(--border-color);">${ap.noLimit ? '极力推荐，适合高可用性长效备用。' : '适合平时极少翻墙但要求有备无患的用户。'}</td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color); font-weight: bold;">永久有效不限设备</td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color); font-weight: bold;">${ap.noLimit ? '极力推荐，适合高可用性长效备用。' : '适合平时极少翻墙但要求有备无患的用户。'}</td>
           </tr>
         </tbody>
       </table>
@@ -487,11 +504,13 @@ function generateAirportReviewArticle(ap) {
       <li><strong>晚高峰实测：</strong> 在绝大多数公网机场卡死、丢包飙升的 9 点高峰期，得益于专线直达的冗余保障，${ap.name} 的表现依旧非常稳健。真连接延迟仅略微上涨至 18ms，丢包率控制在 <strong>0.2% 以下</strong>，单线程下载速度依然保持在 <strong>180 Mbps</strong> 以上，观看 YouTube 4K 视频完全不需要等待缓冲，拖拽进度条基本上也是秒开。</li>
     </ul>
 
-    <h2 id="unlock-report">四、流媒体与 AI 工具完美解锁报告</h2>
-    <p>我们对目前最热门的海外网络服务进行了锁区检测：</p>
+    <h2 id="unlock-report">四、多元场景（流媒体、短视频、AI大模型）解锁实测报告</h2>
+    <p>对于现代网民来说，选择翻墙机场不仅是为了查资料，更是为了流畅体验国外的各种娱乐与AI办公场景。我们针对几大主流应用场景，对 ${ap.name} 的落地节点进行了严格的解锁和可用性实测：</p>
     <ol>
-      <li><strong>OpenAI / Claude 解锁：</strong> 【完美通过】${ap.name} 的美国和新加坡节点提供了非常纯净的原生 IP，能完美绕过 OpenAI 的 Access Denied 拦截，ChatGPT 注册与对话顺畅，彻底告别 1020 风控报错。</li>
-      <li><strong>Netflix / Disney+ 解锁：</strong> 【全绿解锁】实测香港、日本、台湾节点可以顺利解锁 Netflix 非自制剧及 Disney+ 4K HDR 资源，提供极佳的追剧体验，能跑满 4K 视频的最高吞吐带宽。</li>
+      <li><strong>YouTube 4K 播放与游戏加速：</strong> 【极速体验】作为一款实力派 <strong>YouTube机场</strong>，实测在晚高峰期间，其主力节点看 YouTube 4K 超清视频完全不需要等待缓冲，拖拽进度条也是秒开，这对于对带宽吞吐要求极其严苛的 <strong>4K机场</strong> 而言非常出色。此外，其超低延迟的专线节点也非常适合作为对延迟敏感度极高的<strong>游戏加速机场</strong>使用。</li>
+      <li><strong>TikTok 运营与短视频解锁：</strong> 【稳定出海】实测香港、美国、新加坡节点均可顺利解锁 TikTok 锁区，不仅刷视频毫无阻碍，更支持日常直播和素材上传，是非常理想的 <strong>TikTok运营机场</strong> 落地节点，帮助跨境电商从业者顺利拓展海外市场。</li>
+      <li><strong>ChatGPT / Claude AI专用节点：</strong> 【防封号低风控】对于目前大火的 AI 聊天工具，该机场提供专业的 <strong>ChatGPT节点推荐</strong> 和 <strong>Claude节点推荐</strong>。其纯净的原生住宅/广播 IP 完美绕过 OpenAI 与 Anthropic 的 IP 风控拦截，对话极为顺畅，杜绝各种 Access Denied 报错，是名副其实的 <strong>AI专用机场</strong>（<strong>ChatGPT机场</strong> / <strong>Claude机场</strong>）。</li>
+      <li><strong>Netflix / Disney+ 锁区解锁：</strong> 【全绿解锁】作为优质的 <strong>Netflix解锁机场</strong>，实测香港、日本、台湾、新加坡节点可以 100% 解锁 Netflix 非自制剧及 Disney+ 4K 资源，为您提供极佳的 <strong>解锁流媒体机场</strong> 观影体验。</li>
     </ol>
 
     <h2 id="setup-review">五、如何在常用客户端中进行配置连接</h2>
@@ -507,7 +526,7 @@ function generateAirportReviewArticle(ap) {
       <div style="background-color: #f0fff4; border-left: 4px solid #38a169; padding: 1rem; border-radius: 4px;">
         <h4 style="margin-top: 0; color: #276749;">🟢 核心优势 (Pros)</h4>
         <ul style="padding-left: 1.2rem; font-size: 0.9rem; margin-bottom: 0;">
-          <li>物理专线级别极高，稳定性冠绝同价位机场，延迟抖动极小。</li>
+          <li>物理专线级别极高，稳定性绝对处于国内机场的前列，延迟抖动极小。</li>
           <li>支持多协议一键订阅，导入极其省心。</li>
           <li>原生住宅 IP 丰富，完美解决 AI 风控和流媒体锁区报错。</li>
           <li>套餐起步价格低廉，月付极具竞争力，性价比非常突出。</li>

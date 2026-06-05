@@ -1714,3 +1714,95 @@ footer {
   white-space: nowrap;
   border: 0;
 }
+
+/* --- SEO & Layout Enhancements --- */
+
+/* Smooth Scroll and Target Offset Padding */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+/* Sidebar Airport Directory TOC Widget */
+.airport-toc-list {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+.airport-toc-list::-webkit-scrollbar {
+  width: 5px;
+}
+
+.airport-toc-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.airport-toc-list::-webkit-scrollbar-thumb {
+  background-color: var(--border);
+  border-radius: 10px;
+}
+
+.toc-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  text-decoration: none;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border);
+  transition: all 0.2s ease;
+}
+
+.toc-link:hover, .toc-link.active {
+  background-color: var(--border);
+  border-color: var(--accent);
+  transform: translateX(4px);
+}
+
+.toc-rank {
+  font-weight: 700;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--badge-bg);
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  transition: all 0.2s ease;
+}
+
+.toc-link:hover .toc-rank, .toc-link.active .toc-rank {
+  background-color: var(--accent);
+  color: #ffffff;
+}
+
+.toc-name {
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: color 0.2s ease;
+}
+
+.toc-link:hover .toc-name, .toc-link.active .toc-name {
+  color: var(--accent);
+}
+
+.toc-price {
+  font-size: 0.8rem;
+  margin-left: auto;
+  color: #e53e3e;
+  font-weight: 700;
+  background-color: rgba(229, 62, 62, 0.1);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+}
+
+/* Ensure sidebar TOC is clean and disappears on mobile to keep page tidy */
+@media (max-width: 1024px) {
+  .sidebar {
+    display: none;
+  }
+}

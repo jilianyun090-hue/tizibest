@@ -11,7 +11,7 @@ const airports = [
     price: "8.00",
     slug: "jilianyun-review",
     features: ["IEPL专线", "不限速", "不限设备数", "支持不限时"],
-    desc: "2026综合首选，采用IEPL国际专线保证晚高峰。支持不限时套餐且不设设备上限，对新手和极客都极其友好。",
+    desc: "在2026年稳定机场推荐中位居前列的IEPL专线高速机场。完美支持Clash/Shadowrocket订阅，解锁流媒体与ChatGPT/Claude，是绝佳的AI专用机场与不限设备翻墙梯子。",
     affLink: "https://haozevpn.jlyvipaff.com/#/?code=KUKfOY13",
     rank: 3,
     noLimit: true,
@@ -24,7 +24,7 @@ const airports = [
     price: "8.25",
     slug: "shunyun-review",
     features: ["Anycast直连", "1倍率无虚标", "大带宽", "支持不限时"],
-    desc: "全站一倍率，提供超多优质Anycast直连专线节点。价格十分低廉，是不限时大流量用户的极佳选择。",
+    desc: "全站一倍率无虚标的高性价比机场。作为便宜机场推荐首选，提供Anycast高速直连节点与不限时流量包，畅享4K视频与Netflix/YouTube解锁，堪称年度最好用机场和高稳定性科学上网梯子。",
     affLink: "https://bbb.jichang.best/#/register?code=o4I4kToe",
     rank: 1,
     noLimit: true,
@@ -37,7 +37,7 @@ const airports = [
     price: "7.40",
     slug: "huanyuyun-review",
     features: ["BGP多线中转", "支持不限时", "按量付费", "高性价比"],
-    desc: "主打按量付费与不限时套餐，年付仅需89元起。提供BGP多线中转，性价比优秀，适合日常低频或备用用户。",
+    desc: "高性价比的便宜按量付费中转机场。BGP多线接入，是完美的防跑路备用梯子推荐。支持多种主流订阅格式，日常科学上网与AI工具网络解决方案的高性价比选择。",
     affLink: "https://bbb.jichang.best/#/register?code=o4I4kToe",
     rank: 2,
     noLimit: true,
@@ -50,7 +50,7 @@ const airports = [
     price: "7.50",
     slug: "guangnianti-review",
     features: ["老牌机场", "IEPL物理专线", "不限速", "不限时套餐"],
-    desc: "深耕行业多年的知名老厂，以极高的稳定性和灾备出口著称。提供高性价比不限时套餐，大流量首选。",
+    desc: "深耕行业多年的老牌物理专线机场。以极高的容灾稳定性著称，作为稳定机场推荐常客，提供不限速、不限时的抗封锁Shadowsocks/Trojan协议节点，堪称大流量科学上网的良心梯子推荐。",
     affLink: "https://gnt001.gntvipaff.cc/#/?code=j1ufpE44",
     rank: 4,
     noLimit: true,
@@ -63,7 +63,7 @@ const airports = [
     price: "8.25",
     slug: "jisuyun-review",
     features: ["中转加速", "大带宽", "不限时套餐", "多平台兼容"],
-    desc: "极速云采用中转加直连高速混合网络，提供极低的起步门槛和灵活的配置，性价比非常优秀，完美契合个人娱乐。",
+    desc: "采用高隐蔽性中转技术的性价比机场。提供极低起步价格，支持多协议订阅与一键节点配置，适合流媒体解锁与游戏加速，是超低预算下的新手机场推荐选择。",
     affLink: "https://ask.xsccusm.com:8888/#/register?code=RENHYxqv",
     rank: 5,
     noLimit: true,
@@ -76,7 +76,7 @@ const airports = [
     price: "14.99",
     slug: "shanshuiyun-review",
     features: ["隧道中转", "流媒体解锁", "按量付费", "设备无限制"],
-    desc: "主打隧道中转和不限设备，提供极其稳定且全面的流媒体及AI平台解锁支持，日常网络检索推荐。",
+    desc: "主打高速隧道中转与不限设备的稳定机场。支持V2Ray和Trojan多协议，提供干净的原生海外节点，完美解锁Netflix/Disney+与大模型风控，是极佳的解锁流媒体机场。",
     affLink: "https://haozevpn.jlyvipaff.com/#/?code=KUKfOY13",
     rank: 6,
     noLimit: true,
@@ -89,7 +89,7 @@ const airports = [
     price: "14.00",
     slug: "miaomiaoyun-review",
     features: ["高速中转", "原生IP多", "住宅IP解锁", "不限时"],
-    desc: "主打多地BGP接入及原生IP解锁。提供极其干净的住宅IP，非常适合高频使用ChatGPT/Claude的开发者。",
+    desc: "专注于原生IP与住宅IP解锁的高速机场。专为ChatGPT机场与Claude机场使用场景进行节点风控调优，是AI大模型开发者和学术科研的首选AI专用机场。",
     affLink: "https://dl1.mmy8.com/#/register?code=g3bq7bpK",
     rank: 7,
     noLimit: true,
@@ -102,7 +102,7 @@ const airports = [
     price: "15.00",
     slug: "xundavpn-review",
     features: ["直连公网", "大带宽", "老牌稳定", "多协议支持"],
-    desc: "直连公网多协议防封锁梯子，提供大带宽下载支持，适合追求极致速度的大流量下载和重度网民。",
+    desc: "采用多协议抗封锁技术的直连公网翻墙机场。提供千兆大带宽，适合超清4K视频下载与游戏加速，是一款大流量重度网民首选的高速机场与VPN替代方案。",
     affLink: "https://ask.xsccusm.com:8888/#/register?code=RENHYxqv",
     rank: 8,
     noLimit: false,
@@ -115,7 +115,7 @@ const airports = [
     price: "16.80",
     slug: "edgex-review",
     features: ["IPLC专线", "低延迟", "不限设备数", "大流量支持"],
-    desc: "IPLC低延迟跨国专线机场，不限连接设备数量。全节点1倍率无虚耗，晚高峰保障不卡顿。",
+    desc: "全线搭载IPLC低延迟跨境专线的高端高速机场。全节点无虚标，不设设备数上限，晚高峰无卡顿，适合4K/8K视频与流媒体解锁，是一款品质极佳的物理专线梯子推荐。",
     affLink: "https://gnt001.gntvipaff.cc/#/?code=j1ufpE44",
     rank: 9,
     noLimit: true,
@@ -128,7 +128,7 @@ const airports = [
     price: "15.00",
     slug: "bianjieyun-review",
     features: ["IEPL专线", "50+全球节点", "3天退款保障"],
-    desc: "搭载IEPL企业级物理专线，提供50+全球节点，支持大部分海外主流流媒体与ChatGPT解锁。支持UDP，支持最高500Mbps速率，并提供3天无理由退款保障。",
+    desc: "提供IEPL企业物理专线的高端高速机场。支持Trojan/V2Ray等协议，支持最高500Mbps速率，解锁流媒体与ChatGPT/Claude，是追求极致稳定连接的高端翻墙梯子。",
     affLink: "https://www.lvpn.cc/r/6UQDZT",
     rank: 10,
     noLimit: false,
@@ -141,7 +141,7 @@ const airports = [
     price: "10.00",
     slug: "kedajiasudu-review",
     features: ["混合专线", "价格实惠", "多线负载", "节点丰富"],
-    desc: "专线多线负载均衡架构，套餐价格亲民，适合低预算下追求较高速度和多节点备选的玩家。",
+    desc: "基于专线多负载均衡架构的性价比机场。套餐价格极低，提供丰富且抗封锁的Shadowsocks/V2Ray海外节点，是极具竞争力的便宜机场推荐和备用翻墙梯子。",
     affLink: "https://1.mkd997.com/#/register?code=JgTY5JiT",
     rank: 11,
     noLimit: false,
@@ -154,7 +154,7 @@ const airports = [
     price: "10.60",
     slug: "naiyun-review",
     features: ["跨境专线", "AI/Netflix解锁", "全客户端支持", "不限时"],
-    desc: "提供超强流媒体与AI平台解锁，包含专属客户端，极简化一键连接，支持不限时按量套餐。",
+    desc: "提供全套定制客户端与一键节点导入的新手机场推荐。支持不限时按量付费，解锁流媒体与AI，是操作极其简单、适合小白用户的稳定机场。",
     affLink: "https://haozevpn.gcvipaff.cc/#/?code=WRQJc2v4",
     rank: 12,
     noLimit: true,
@@ -167,7 +167,7 @@ const airports = [
     price: "25.00",
     slug: "yinyun-review",
     features: ["中转专线", "高隐蔽性", "高安全性", "防封锁协议"],
-    desc: "主打中转专线与自研高隐蔽性防封锁传输协议，抗封锁能力强，特别适合高敏感时期的稳定科学上网。",
+    desc: "主打自研高隐蔽性协议与加密中转的高速机场。抗封锁表现出色，在敏感期依然能保证稳定连接，是外贸与跨境开发首选的安全科学上网梯子。",
     affLink: "https://flycat.flycatvipaff.cc/#/?code=1arEKHqh",
     rank: 13,
     noLimit: false,
@@ -180,7 +180,7 @@ const airports = [
     price: "6.00",
     slug: "shanhai-review",
     features: ["极致低价", "不限时套餐", "包年特惠", "中转加速"],
-    desc: "适合大流量下载和追求绝对低门槛的平民级机场。套餐价格极低，性价比极高，推荐作为常用备用选项。",
+    desc: "极致性价比的便宜机场推荐。月付仅需几元，提供大带宽下载与中转线路，支持不限时包年特惠，是完美的低预算主用或科学上网备用梯子。",
     affLink: "https://shanhai.sbs/#/register?code=qVTbPfWP",
     rank: 14,
     noLimit: true,
@@ -193,7 +193,7 @@ const airports = [
     price: "10.00",
     slug: "lizione-review",
     features: ["Shadowsocks", "BGP中转", "多端支持", "原生解锁"],
-    desc: "稳定Shadowsocks原生协议专线，节点速度快且安全风控干净，完美解锁ChatGPT与各类流媒体。",
+    desc: "提供纯净原生IP的专业Shadowsocks机场。节点速度快，风控低，能完美解锁ChatGPT/Claude与流媒体，是极客开发专属的稳定高速机场。",
     affLink: "https://haoze.v2yunvipaff.com/#/?code=trJG2874",
     rank: 15,
     noLimit: false,
@@ -206,7 +206,7 @@ const airports = [
     price: "8.25",
     slug: "guangshuyun-review",
     features: ["BGP+IEPL", "不限时套餐", "1倍率无虚耗", "全节点解锁"],
-    desc: "高质量BGP中转和IEPL专线混合架构，不限时大流量套餐性价比突出，晚高峰运行极速不卡顿。",
+    desc: "采用BGP中转与IEPL专线混合架构的性价比机场。大流量不限时套餐，晚高峰网络极速，适合超清视频解锁与日常网络加速。",
     affLink: "https://kjlq01.gsyvipaff.cc/#/?code=b1OTkTeL",
     rank: 16,
     noLimit: true,
@@ -219,7 +219,7 @@ const airports = [
     price: "20.00",
     slug: "quanqiuyun-review",
     features: ["智能调度", "8K秒开", "流媒体优化", "不限时"],
-    desc: "专为4K/8K超清流媒体进行优化，晚高峰吞吐能力极强。按量付费不限时，稳定性和速度都属第一梯队。",
+    desc: "专为4K/8K解锁流媒体机场进行深度优化的稳定机场。按量付费不限时，晚高峰下载速度极快，是重度观影党必备的高速机场。",
     affLink: "https://haozevpn.gcvipaff.cc/#/?code=WRQJc2v4",
     rank: 17,
     noLimit: true,
@@ -232,7 +232,7 @@ const airports = [
     price: "16.00",
     slug: "xingdaomeng-review",
     features: ["IEPL物理专线", "不限设备", "Trojan防封锁", "不限时"],
-    desc: "全线搭载防封锁极佳的Trojan协议与物理专线，支持无限设备同时在线。晚高峰速率有保障。",
+    desc: "全线采用防封锁Trojan协议的物理专线稳定机场。支持无限设备在线，物理跨境专线直连，晚高峰大带宽，是一款抗干扰性极强的翻墙梯子。",
     affLink: "https://wuyou202001.xdmvipaff.cc/#/?code=olWCiAhj",
     rank: 18,
     noLimit: true,
@@ -244,7 +244,7 @@ const airports = [
     price: "10.00",
     slug: "doraemon-review",
     features: ["三网IEPL", "千兆大带宽", "原生IP解锁", "支持不限时"],
-    desc: "搭载三网IEPL内网专线出口，晚高峰实测能跑满千兆带宽。原生IP解锁，完美满足风控AI与流媒体需求。",
+    desc: "搭载三网IEPL专线与千兆带宽的顶级高速机场。节点提供纯净原生IP解锁，完美绕过ChatGPT与Netflix锁区，适合AI办公与流媒体观影。",
     affLink: "https://store.yyds2-doraemon.site/login/register?invite_code=5VxQMw0k",
     rank: 19,
     noLimit: true,
@@ -256,7 +256,7 @@ const airports = [
     price: "19.90",
     slug: "dageyun-review",
     features: ["自研客户端", "有免费试用", "多节点覆盖", "一键连接"],
-    desc: "提供专业的自研客户端以及新用户免费试用额度，操作门槛极低，适合小白用户一键完成科学上网。",
+    desc: "提供自研客户端与免费试用额度的新手机场推荐。无需复杂设置，一键导入节点即可实现科学上网，是小白出海首选的翻墙梯子。",
     affLink: "https://haoze.v2yunvipaff.com/#/?code=trJG2874",
     rank: 20,
     noLimit: false,
@@ -268,7 +268,7 @@ const airports = [
     price: "15.00",
     slug: "longmaoyun-review",
     features: ["Shadowsocks", "专线中转", "多端自适应", "安全稳定"],
-    desc: "高端中转传输加上Shadowsocks原生链路，提供极其纯净安全的连接质量，有效抵抗封锁，风控表现优秀。",
+    desc: "基于高端加密中转与原生Shadowsocks协议的稳定机场。安全性高，IP纯净度强，完美保护出海隐私并降低风控。",
     affLink: "https://flycat.flycatvipaff.cc/#/?code=1arEKHqh",
     rank: 21,
     noLimit: false,
@@ -280,7 +280,7 @@ const airports = [
     price: "15.00",
     slug: "feiniaojichang-review",
     features: ["BGP多线中转", "支持不限时", "高速平稳", "全节点解锁"],
-    desc: "采用BGP多线网络，保证了国内大部分省市都有极快的连接响应速度。提供按量付费不限时套餐。",
+    desc: "采用国内多线BGP入口接入的高速机场。响应时间极短，不限时大流量套餐性价比极高，推荐作为日常娱乐与备用节点。",
     affLink: "https://bbb.jichang.best/#/register?code=o4I4kToe",
     rank: 22,
     noLimit: true,
@@ -292,7 +292,7 @@ const airports = [
     price: "8.00",
     slug: "qingyunti-review",
     features: ["隧道中转", "支持不限时", "大带宽秒开", "性价比高"],
-    desc: "百兆/千兆大带宽隧道接入，支持不限时套餐。看视频及浏览社交媒体极其流畅，具有极高性价比。",
+    desc: "采用多入口加密隧道中转的便宜机场推荐。支持按量不限时，网页与超清视频秒开，是极致性价比的科学上网梯子。",
     affLink: "https://shanhai.sbs/#/register?code=qVTbPfWP",
     rank: 23,
     noLimit: true,
@@ -304,7 +304,7 @@ const airports = [
     price: "10.60",
     slug: "huayun-review",
     features: ["跨境物理专线", "高防中转", "稳定老厂", "多平台优化"],
-    desc: "知名老牌机场，物理专线直连，虽然年付起步但稳定性在业内名列前茅，延迟低、无任何卡顿波动。",
+    desc: "业内知名度极高的高端老牌IEPL专线机场。提供全物理专线直连与多协议混合订阅，晚高峰零延迟、零卡顿，是高稳定性要求的商务首选。",
     affLink: "https://gnt001.gntvipaff.cc/#/?code=j1ufpE44",
     rank: 24,
     noLimit: false,
@@ -592,7 +592,7 @@ function build() {
       : `<div class="airport-list-avatar">${ap.name[0]}</div>`;
 
     return `
-      <div class="airport-list-item">
+      <div class="airport-list-item" id="${ap.slug}">
         <div class="airport-list-left">
           <div class="airport-list-rank">${rankBadge}</div>
           ${avatarHTML}
@@ -946,7 +946,19 @@ function build() {
     const pageDesc = descMatch ? descMatch[1] : '';
     const seoTags = getSeoTags(pageTitle, pageDesc, 'airport.html');
     
+    // Generate Table of Contents for the airport recommendations list
+    const airportTocListMarkup = sortedAirports.map(ap => {
+      return `
+        <a href="#${ap.slug}" class="toc-link">
+          <span class="toc-rank">${ap.rank}</span>
+          <span class="toc-name">${ap.name}</span>
+          <span class="toc-price">￥${ap.price}/月</span>
+        </a>
+      `;
+    }).join('\n');
+    
     gridHTML = gridHTML.replace(/\{\{airportList\}\}/g, airportListMarkup);
+    gridHTML = gridHTML.replace(/\{\{airportTocList\}\}/g, airportTocListMarkup);
     gridHTML = gridHTML.replace(/\{\{searchIndex\}\}/g, searchIndexJSON);
     gridHTML = gridHTML.replace(/\{\{seoTags\}\}/g, seoTags);
     
