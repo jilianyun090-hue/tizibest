@@ -4,6 +4,30 @@ const https = require('https');
 const articles = require('./src/data/articles.js');
 const articleGenerator = require('./src/data/articleGenerator.js');
 
+// Pad description to meet search engine recommended length (150-160 characters)
+function padDescription(desc) {
+  if (!desc) return '';
+  const targetMin = 150;
+  const targetMax = 156;
+  if (desc.length >= targetMin && desc.length <= targetMax) {
+    return desc;
+  }
+  if (desc.length > targetMax) {
+    return desc.substring(0, targetMax - 3) + '...';
+  }
+  const paddingSource = "稳定机场推荐网致力于为广大网络出海、外贸办公及学术科研用户提供客观中立的翻墙机场测评与Clash/小火箭等客户端配置指南，助您畅快安全连接全球网络。";
+  let needed = 152 - desc.length;
+  if (needed > 0) {
+    let suffix = " " + paddingSource.substring(0, needed - 1);
+    if (suffix.length < needed) {
+      suffix = suffix.padEnd(needed, '.');
+    }
+    return desc + suffix;
+  }
+  return desc;
+}
+
+
 // Airport metadata for grid cards and comparison table
 const airports = [
   {
@@ -368,8 +392,12 @@ function build() {
     art.content = articleGenerator.getContentForArticle(art, airports);
   });
 
-  // 1. Create target directories
-  ensureDirSync(path.join(__dirname, 'posts'));
+  // 1. Create target directories (Clean 'posts' directory first)
+  const postsDir = path.join(__dirname, 'posts');
+  if (fs.existsSync(postsDir)) {
+    fs.rmSync(postsDir, { recursive: true, force: true });
+  }
+  ensureDirSync(postsDir);
   ensureDirSync(path.join(__dirname, 'assets', 'css'));
   ensureDirSync(path.join(__dirname, 'assets', 'js'));
   ensureDirSync(path.join(__dirname, 'assets', 'images'));
@@ -914,7 +942,7 @@ function build() {
     const titleMatch = homeHTML.match(/<title>([\s\S]+?)<\/title>/i);
     const descMatch = homeHTML.match(/<meta\s+name=["']description["']\s+content=["']([\s\S]+?)["']/i);
     const pageTitle = titleMatch ? titleMatch[1] : '稳定机场推荐';
-    const pageDesc = descMatch ? descMatch[1] : '';
+    const pageDesc = descMatch ? padDescription(descMatch[1]) : '';
     const seoTags = getSeoTags(pageTitle, pageDesc, '');
     
     // Perform replacements
@@ -943,7 +971,7 @@ function build() {
     const titleMatch = gridHTML.match(/<title>([\s\S]+?)<\/title>/i);
     const descMatch = gridHTML.match(/<meta\s+name=["']description["']\s+content=["']([\s\S]+?)["']/i);
     const pageTitle = titleMatch ? titleMatch[1] : '2026年机场评测推荐列表';
-    const pageDesc = descMatch ? descMatch[1] : '';
+    const pageDesc = descMatch ? padDescription(descMatch[1]) : '';
     const seoTags = getSeoTags(pageTitle, pageDesc, 'airport.html');
     
     // Generate Table of Contents for the airport recommendations list
@@ -978,7 +1006,7 @@ function build() {
     const titleMatch = reviewsHTML.match(/<title>([\s\S]+?)<\/title>/i);
     const descMatch = reviewsHTML.match(/<meta\s+name=["']description["']\s+content=["']([\s\S]+?)["']/i);
     const pageTitle = titleMatch ? titleMatch[1] : '稳定高速机场评测列表';
-    const pageDesc = descMatch ? descMatch[1] : '';
+    const pageDesc = descMatch ? padDescription(descMatch[1]) : '';
     const seoTags = getSeoTags(pageTitle, pageDesc, 'reviews.html');
     
     reviewsHTML = reviewsHTML.replace(/\{\{reviewArticles\}\}/g, reviewArticlesMarkup);
@@ -1005,7 +1033,7 @@ function build() {
     const titleMatch = guidesHTML.match(/<title>([\s\S]+?)<\/title>/i);
     const descMatch = guidesHTML.match(/<meta\s+name=["']description["']\s+content=["']([\s\S]+?)["']/i);
     const pageTitle = titleMatch ? titleMatch[1] : '科学上网指南与技术科普专题';
-    const pageDesc = descMatch ? descMatch[1] : '';
+    const pageDesc = descMatch ? padDescription(descMatch[1]) : '';
     const seoTags = getSeoTags(pageTitle, pageDesc, 'guides.html');
     
     guidesHTML = guidesHTML.replace(/\{\{guideArticles\}\}/g, guideArticlesMarkup);
@@ -1032,7 +1060,7 @@ function build() {
     const titleMatch = softwareHTML.match(/<title>([\s\S]+?)<\/title>/i);
     const descMatch = softwareHTML.match(/<meta\s+name=["']description["']\s+content=["']([\s\S]+?)["']/i);
     const pageTitle = titleMatch ? titleMatch[1] : '翻墙加速软件客户端下载与配置新手教程';
-    const pageDesc = descMatch ? descMatch[1] : '';
+    const pageDesc = descMatch ? padDescription(descMatch[1]) : '';
     const seoTags = getSeoTags(pageTitle, pageDesc, 'software.html');
     
     softwareHTML = softwareHTML.replace(/\{\{searchIndex\}\}/g, searchIndexJSON);
@@ -1062,6 +1090,7 @@ function build() {
     }));
 
     articles.forEach(art => {
+      const paddedDesc = padDescription(art.description || '');
       let postHTML = articleTemplate;
       
       // First, replace tags in the article content itself (like comparison table and cards grid)
@@ -1083,10 +1112,10 @@ function build() {
         categoryLink = 'software.html';
       }
       
-      const seoTags = getPostSeoTags(art.title, art.description, art.slug);
+      const seoTags = getPostSeoTags(art.title, paddedDesc, art.slug);
       
       postHTML = postHTML.replace(/\{\{title\}\}/g, art.title);
-      postHTML = postHTML.replace(/\{\{description\}\}/g, art.description);
+      postHTML = postHTML.replace(/\{\{description\}\}/g, paddedDesc);
       postHTML = postHTML.replace(/\{\{keywords\}\}/g, art.keywords);
       postHTML = postHTML.replace(/\{\{date\}\}/g, art.date);
       postHTML = postHTML.replace(/\{\{category\}\}/g, art.category);
