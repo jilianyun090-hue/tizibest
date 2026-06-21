@@ -507,12 +507,6 @@ header {
   }
 }
 
-@media (min-width: 1400px) {
-  .article-body .airport-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
 .airport-card {
   background-color: var(--bg-secondary);
   border: 1px solid var(--border);

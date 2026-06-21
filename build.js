@@ -523,7 +523,7 @@ function build() {
           </div>
           <div style="display: flex; gap: 0.5rem; flex-shrink: 0;">
             <a href="posts/${ap.slug}.html" class="airport-btn" style="background-color: var(--badge-bg); color: var(--text-secondary);">评测</a>
-            <a href="${ap.affLink}" target="_blank" rel="nofollow" class="airport-btn">注册官网</a>
+            <a href="${ap.affLink}" target="_blank" rel="nofollow" class="airport-btn">官网注册</a>
           </div>
         </div>
       </div>
@@ -557,7 +557,7 @@ function build() {
           </div>
           <div style="display: flex; gap: 0.5rem; flex-shrink: 0;">
             <a href="${ap.slug}.html" class="airport-btn" style="background-color: var(--badge-bg); color: var(--text-secondary);">评测</a>
-            <a href="${ap.affLink}" target="_blank" rel="nofollow" class="airport-btn">注册官网</a>
+            <a href="${ap.affLink}" target="_blank" rel="nofollow" class="airport-btn">官网注册</a>
           </div>
         </div>
       </div>
@@ -715,7 +715,7 @@ function build() {
           </div>
           <div style="display: flex; gap: 0.5rem; flex-shrink: 0;">
             <a href="posts/${ap.slug}.html" class="airport-btn" style="background-color: var(--badge-bg); color: var(--text-secondary);">评测</a>
-            <a href="${ap.affLink}" target="_blank" rel="nofollow" class="airport-btn">注册官网</a>
+            <a href="${ap.affLink}" target="_blank" rel="nofollow" class="airport-btn">官网注册</a>
           </div>
         </div>
       </div>
