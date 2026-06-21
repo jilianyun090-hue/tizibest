@@ -494,6 +494,25 @@ header {
   }
 }
 
+/* Adjust column count inside article body due to sidebar constraints */
+.article-body .airport-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .article-body .airport-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1400px) {
+  .article-body .airport-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 .airport-card {
   background-color: var(--bg-secondary);
   border: 1px solid var(--border);
@@ -594,7 +613,7 @@ header {
 }
 
 .airport-card-footer {
-  padding: 1rem 1.25rem;
+  padding: 1rem 0.75rem;
   border-top: 1px solid var(--border);
   display: flex;
   justify-content: space-between;
@@ -616,11 +635,16 @@ header {
 .airport-btn {
   background-color: var(--accent);
   color: white;
-  padding: 0.45rem 1rem;
+  padding: 0.45rem 0.65rem;
   border-radius: 6px;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 600;
   transition: var(--transition);
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 .airport-btn:hover {

@@ -501,6 +501,26 @@ const articles = [
     tags: ["花云", "物理专线", "商务首选", "老牌一线"],
     date: "2026-04-21",
     content: "GENERATE_AIRPORT_REVIEW"
+  },
+  {
+    slug: "jinyun-review",
+    title: "2026 锦云机场评测：月付6元起极速不限速高性价比中转专线推荐",
+    description: "深度测评锦云机场，提供2026年最新资费、速度数据。锦云采用高速中转专线，全站不限速，目前最高支持同时在线10台设备，完美解锁流媒体与AI软件，性价比极高。",
+    keywords: "锦云,锦云机场,锦云评测,性价比机场,便宜机场",
+    category: "机场评测推荐",
+    tags: ["锦云", "中转加速", "低至6元", "多设备支持"],
+    date: "2026-06-22",
+    content: "GENERATE_AIRPORT_REVIEW"
+  },
+  {
+    slug: "yingzi-review",
+    title: "2026 影子VPN评测：月付18.8元起全高速专线IEPL跨境稳定机场推荐",
+    description: "深度测评影子VPN，提供2026年最新速度延迟评测。影子VPN采用全高速专线IEPL跨境，完美解锁Netflix/Disney+/Tiktok/ChatGPT，高峰期稳定不卡顿。",
+    keywords: "影子vpn,影子VPN评测,影子机场,IEPL专线机场,稳定机场",
+    category: "机场评测推荐",
+    tags: ["影子vpn", "IEPL专线", "流媒体解锁", "ChatGPT解锁"],
+    date: "2026-06-22",
+    content: "GENERATE_AIRPORT_REVIEW"
   }
 ];
 
