@@ -439,6 +439,105 @@ function generateGeneralKnowledgeArticle(slug, title) {
 
 function generateAirportReviewArticle(ap) {
   const score = (10 - ap.rank * 0.1).toFixed(1);
+  let pricingRows = '';
+  if (ap.slug === 'runwaycloud-review') {
+    pricingRows = `
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>天天尝鲜拼</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color);">100 GB / 月</td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color);">￥9.90</td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color); font-weight: bold;">无设备数限制 (限速200M)</td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color);">尝鲜首选，适合网页浏览、日常办公与轻度社交。</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>万人好评拼</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color);">200 GB / 月</td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color);">￥19.90</td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color); font-weight: bold;">无设备数限制 (限速400M)</td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color);">主流推荐，晚高峰无压力4K秒开，BGP线路极佳。</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>至尊金牌拼</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color);">600 GB / 月</td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color);">￥50.00</td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color); font-weight: bold;">无设备数限制 (不限速)</td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color);">极速尊享，BGP+IEPL专线高速保障，7*24客服支持。</td>
+          </tr>
+    `;
+  } else if (ap.slug === 'lumina-review') {
+    pricingRows = `
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>Nano 优选直连</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color);">200 GB / 月</td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color);">￥10.00</td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color); font-weight: bold;">无设备数限制</td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color);">高性价比直连，适合流媒体与AI工具轻度解锁。</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>Basic 优选中继</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color);">200 GB / 月 (2x倍率)</td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color);">￥15.00</td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color); font-weight: bold;">无设备数限制</td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color);">优质HK中转入口，适合稳定日常出海与学术开发。</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>Premium 进阶中继</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color);">500 GB / 月 (2x倍率)</td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color);">￥30.00</td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color); font-weight: bold;">无设备数限制</td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color);">三网优化中转大流量，适合高清流媒体追剧与大文件下载。</td>
+          </tr>
+    `;
+  } else if (ap.slug === '99ba-review') {
+    pricingRows = `
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>九九@特惠月套餐</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color);">70 GB / 月</td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color);">￥9.90</td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color); font-weight: bold;">限 99 台设备 (限速999M)</td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color);">特惠月付，适合日常轻度网页浏览与社交媒体体验。</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>九九@星耀VIP</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color);">99 GB / 月</td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color);">￥12.99 (季付36.99)</td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color); font-weight: bold;">限 99 台设备 (限速999M)</td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color);">星耀尊享，大带宽支持主流流媒体与国外AI工具。</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>九九@全年特惠套餐</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color);">66 GB / 月</td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color);">￥99.99 / 年 (折约7.5/月)</td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color); font-weight: bold;">限 99 台设备 (限速999M)</td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color);">全年特惠性价比极高，可使用9折优惠码 2026-99。</td>
+          </tr>
+    `;
+  } else {
+    pricingRows = `
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>轻量普及版</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color);">80GB - 120GB</td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color);">￥${ap.price}</td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color); font-weight: bold;">${ap.noLimit ? '无设备数限制' : '限 2-3 台设备'}</td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color);">个人学术检索、日常外贸开发工作与轻度社媒浏览。</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>标准尊享版</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color);">250GB - 300GB</td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color);">￥${(parseFloat(ap.price) * 1.8).toFixed(2)}</td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color); font-weight: bold;">${ap.noLimit ? '无设备数限制' : '限 5 设备'}</td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color);">YouTube 4K 秒开、Netflix 4K 重度追剧与大文件下载。</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>按量不限时（特色）</strong></td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color);">一次性 200GB - 500GB</td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color);">￥${(parseFloat(ap.price) * 3.5).toFixed(2)} /一次性</td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color); font-weight: bold;">永久有效不限设备</td>
+            <td style="padding: 0.75rem; border: 1px solid var(--border-color); font-weight: bold;">${ap.noLimit ? '极力推荐，适合高可用性长效备用。' : '适合平时极少翻墙但要求有备无患的用户。'}</td>
+          </tr>
+    `;
+  }
+
   return `
     <p>经常在论坛和各大社群看到许多冲浪老铁发帖发问：<strong>“2026年了，到底还有哪些不跑路的稳定机场推荐？”</strong> 确实，随着防火长城（GFW）的日常探测手段不断升级，以前那种随便买个超低价代理节点就能安稳用一年的时代早已过去。现在的<strong>翻墙机场</strong>与<strong>科学上网机场</strong>市场鱼龙混杂，许多小作坊机场主跑路频繁，不仅令用户资金受损，更耽误了重要的学术研究或外贸业务。</p>
     
@@ -472,27 +571,7 @@ function generateAirportReviewArticle(ap) {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>轻量普及版</strong></td>
-            <td style="padding: 0.75rem; border: 1px solid var(--border-color);">80GB - 120GB</td>
-            <td style="padding: 0.75rem; border: 1px solid var(--border-color);">￥${ap.price}</td>
-            <td style="padding: 0.75rem; border: 1px solid var(--border-color); font-weight: bold;">${ap.noLimit ? '无设备数限制' : '限 2-3 台设备'}</td>
-            <td style="padding: 0.75rem; border: 1px solid var(--border-color);">个人学术检索、日常外贸开发工作与轻度社媒浏览。</td>
-          </tr>
-          <tr>
-            <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>标准尊享版</strong></td>
-            <td style="padding: 0.75rem; border: 1px solid var(--border-color);">250GB - 300GB</td>
-            <td style="padding: 0.75rem; border: 1px solid var(--border-color);">￥${(parseFloat(ap.price) * 1.8).toFixed(2)}</td>
-            <td style="padding: 0.75rem; border: 1px solid var(--border-color); font-weight: bold;">${ap.noLimit ? '无设备数限制' : '限 5 设备'}</td>
-            <td style="padding: 0.75rem; border: 1px solid var(--border-color);">YouTube 4K 秒开、Netflix 4K 重度追剧与大文件下载。</td>
-          </tr>
-          <tr>
-            <td style="padding: 0.75rem; border: 1px solid var(--border-color);"><strong>按量不限时（特色）</strong></td>
-            <td style="padding: 0.75rem; border: 1px solid var(--border-color);">一次性 200GB - 500GB</td>
-            <td style="padding: 0.75rem; border: 1px solid var(--border-color);">￥${(parseFloat(ap.price) * 3.5).toFixed(2)} /一次性</td>
-            <td style="padding: 0.75rem; border: 1px solid var(--border-color); font-weight: bold;">永久有效不限设备</td>
-            <td style="padding: 0.75rem; border: 1px solid var(--border-color); font-weight: bold;">${ap.noLimit ? '极力推荐，适合高可用性长效备用。' : '适合平时极少翻墙但要求有备无患的用户。'}</td>
-          </tr>
+          ${pricingRows}
         </tbody>
       </table>
     </div>
