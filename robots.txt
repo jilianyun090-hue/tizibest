@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://vpns-top.com/sitemap.xml
+Sitemap: https://tizibest.com/sitemap.xml

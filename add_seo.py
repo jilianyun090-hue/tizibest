@@ -20,14 +20,14 @@ GEO_META = '''  <meta name="geo.region" content="CN">
   <meta name="twitter:card" content="summary_large_image">
 '''
 
-def process_file(path, slug, base='https://www.vpns-top.com'):
+def process_file(path, slug, base='https://www.tizibest.com'):
     with open(path, encoding='utf-8') as f:
         c = f.read()
     # Fix logo
-    c = c.replace('<span>vpns-top.com</span>', '<span>稳定机场推荐</span>')
+    c = c.replace('<span>vpns-top.com</span>', '<span>稳定机场推荐</span>').replace('<span>tizibest.com</span>', '<span>稳定机场推荐</span>')
     # Add GEO only once
     if 'geo.region' not in c:
-        tm = re.search(r'<title>(.+?)(?: - vpns-top\.com)?</title>', c)
+        tm = re.search(r'<title>(.+?)(?: - (?:vpns-top|tizibest)\.com)?</title>', c)
         dm = re.search(r'<meta name="description" content="([^"]+)"', c)
         og_title = tm.group(1) if tm else '稳定机场推荐'
         og_desc  = dm.group(1)[:160] if dm else '2026年优质机场评测'

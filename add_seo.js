@@ -18,14 +18,14 @@ const GEO = `  <meta name="geo.region" content="CN">
 function processFile(filePath, urlPath) {
   let c = fs.readFileSync(filePath, 'utf8');
   // Fix logo
-  c = c.replace(/<span>vpns-top\.com<\/span>/g, '<span>稳定机场推荐</span>');
+  c = c.replace(/<span>(?:vpns-top|tizibest)\.com<\/span>/g, '<span>稳定机场推荐</span>');
   // Add GEO only if not present
   if (!c.includes('geo.region')) {
-    const titleM = c.match(/<title>(.+?)(?: - vpns-top\.com)?<\/title>/);
+    const titleM = c.match(/<title>(.+?)(?: - (?:vpns-top|tizibest)\.com)?<\/title>/);
     const descM  = c.match(/<meta name="description" content="([^"]+)"/);
     const ogTitle = titleM ? titleM[1] : '稳定机场推荐';
     const ogDesc  = descM  ? descM[1].slice(0,160) : '2026年优质机场评测';
-    const ogUrl   = `https://www.vpns-top.com/${urlPath}`;
+    const ogUrl   = `https://www.tizibest.com/${urlPath}`;
     const ogExtra = `  <meta property="og:title" content="${ogTitle}">\n  <meta property="og:description" content="${ogDesc}">\n  <meta property="og:url" content="${ogUrl}">\n`;
     c = c.replace('</head>', GEO + ogExtra + '</head>');
     fs.writeFileSync(filePath, c, 'utf8');

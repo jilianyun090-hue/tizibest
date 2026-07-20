@@ -2,7 +2,7 @@
 # 同时将文章 header logo 更新为"稳定机场推荐"
 
 $postsDir = "d:\桌面文件\vpns-top.com\posts"
-$siteUrl = "https://www.vpns-top.com"
+$siteUrl = "https://www.tizibest.com"
 
 # GEO meta 块 (针对中文用户目标受众)
 $geoMeta = @'
@@ -12,10 +12,10 @@ $geoMeta = @'
   <meta name="revisit-after" content="3 days">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <meta property="og:type" content="article">
-  <meta property="og:site_name" content="稳定机场推荐 - vpns-top.com">
+  <meta property="og:site_name" content="稳定机场推荐 - tizibest.com">
   <meta property="og:locale" content="zh_CN">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@vpnstop">
+  <meta name="twitter:site" content="@tizibest">
 '@
 
 $files = Get-ChildItem -Path $postsDir -Filter "*.html"
@@ -25,10 +25,10 @@ foreach ($file in $files) {
     $content = Get-Content -Path $file.FullName -Raw -Encoding UTF8
 
     # 1. 修复 logo 文字
-    $content = $content -replace '<span>vpns-top\.com</span>', '<span>稳定机场推荐</span>'
+    $content = $content -replace '<span>(vpns-top|tizibest)\.com</span>', '<span>稳定机场推荐</span>'
 
     # 2. 提取 title 和 description 用于 OG 标签
-    $titleMatch = [regex]::Match($content, '<title>(.+?) - vpns-top\.com</title>')
+    $titleMatch = [regex]::Match($content, '<title>(.+?) - (vpns-top|tizibest)\.com</title>')
     $descMatch  = [regex]::Match($content, '<meta name="description" content="([^"]+)"')
     $urlSlug    = $file.BaseName
 

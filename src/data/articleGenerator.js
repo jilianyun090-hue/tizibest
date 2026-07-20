@@ -727,6 +727,130 @@ function generateMagicLadderRecommendations() {
   `;
 }
 
+function generateClashPartyTutorial() {
+  return `
+    <p><strong>Clash Party</strong> 是基于开源 Clash 项目深度定制的桌面端分支版。在瞬息万变的网络环境中，它坚持"稳定大于一切"的设计理念，特别适合追求极致稳定性的用户。</p>
+
+    <p style="text-align: center;">
+      <img src="https://clashmac.cn.com/img/logo/clash-party.webp" alt="Clash Party Logo" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+    </p>
+
+    <h2 id="highlights">🚀 软件亮点</h2>
+    <ul>
+      <li><strong>极致稳定</strong>：以稳定性为第一设计目标，适合长期挂机使用。</li>
+      <li><strong>兼容性强</strong>：支持主流机场的所有订阅格式。</li>
+      <li><strong>规则分流</strong>：内置强大的规则分流引擎，国内直连国外走代理。</li>
+    </ul>
+
+    <h2 id="download">📥 软件下载</h2>
+    <ul>
+      <li><strong>官方 GitHub</strong>: <a href="https://github.com/GUI-for-Cores/GUI.for.Clash/releases" target="_blank" rel="nofollow">Clash Party Releases</a></li>
+      <li>根据系统选择对应的安装包下载。</li>
+    </ul>
+
+    <h2 id="subscribe-guide">⚙️ 添加订阅教程</h2>
+
+    <h3>1. 导入订阅链接</h3>
+    <p>打开 Clash Party，点击 <strong>配置</strong> → <strong>导入订阅</strong>，粘贴机场提供的订阅链接，点击确认。</p>
+    <p style="text-align: center;">
+      <img src="https://clashmac.cn.com/img/docs/20260102143014522.webp" alt="导入订阅" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+    </p>
+
+    <h3>2. 选择节点开启代理</h3>
+    <p>订阅更新完成后，在节点列表里选择延迟较低的节点，然后打开主界面的代理开关。</p>
+    <p style="text-align: center;">
+      <img src="https://clashmac.cn.com/img/docs/20260105120039905.webp" alt="选择节点开启代理" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+    </p>
+
+    <h3>3. 切换代理模式</h3>
+    <p>点击模式按钮，可以在 <strong>规则（推荐）</strong>、<strong>全局</strong>、<strong>直连</strong> 之间切换。</p>
+    <p style="text-align: center;">
+      <img src="https://clashmac.cn.com/img/docs/20260102143037110.webp" alt="模式选择" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+    </p>
+
+    <h2 id="suggestions">💡 使用建议</h2>
+    <ul>
+      <li>📌 <strong>日常使用</strong>：规则模式（国内直连，国外走代理）</li>
+      <li>🚀 <strong>全局代理</strong>：访问全部海外服务时使用</li>
+      <li>🔄 <strong>节点不通</strong>：切换节点或更新订阅</li>
+      <li>⚡ <strong>速度慢</strong>：优先选择低延迟节点（SG / JP / HK）</li>
+    </ul>
+  `;
+}
+
+function generateClashMiTutorial() {
+  return `
+    <p><strong>Clash Mi</strong> 是一款基于 <strong>Mihomo（Clash Meta）核心</strong> 的代理客户端，界面简洁、操作直观，非常适合新手快速导入机场订阅并使用规则分流或全局代理。</p>
+
+    <p style="text-align: center;">
+      <img src="https://clashmac.cn.com/img/logo/clashmi.webp" alt="Clash Mi Logo" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+    </p>
+
+    <h2 id="highlights">🚀 软件亮点</h2>
+    <ul>
+      <li><strong>极致精简</strong>：无多余动画与广告，一切为了极致的网络转发效率。</li>
+      <li><strong>内核无缝适配</strong>：完美发挥 Mihomo 内核在流媒体解锁与边缘分流上的优势。</li>
+      <li><strong>资源占用低</strong>：内存占用仅为同类 Electron 框架软件的不到三分之一。</li>
+      <li><strong>配置灵活</strong>：支持复杂的 YAML 自定义，满足各种专家级分流场景。</li>
+    </ul>
+
+    <h2 id="download">📥 软件获取</h2>
+    <ul>
+      <li><strong>官方 GitHub</strong>: <a href="https://github.com/KaringX/clashmi/releases" target="_blank" rel="nofollow">Clash Mi Releases</a></li>
+      <li>建议优先下载 <strong>最新正式版（Release）</strong>。</li>
+    </ul>
+
+    <h2 id="subscribe-guide">⚙️ 添加订阅教程</h2>
+
+    <h3>1. 新增配置</h3>
+    <p>打开 Clash Mi：进入首页，点击 <strong>我的配置</strong>，点击右上角 <strong>＋</strong>。</p>
+    <p style="text-align: center;">
+      <img src="https://clashmac.cn.com/img/docs/20260102140626013.webp" alt="Clash Mi 添加订阅" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+    </p>
+
+    <h3>2. 选择「从剪贴板导入」</h3>
+    <p>提前复制好你的机场订阅链接，然后选择：<strong>从剪贴板导入</strong></p>
+    <p style="text-align: center;">
+      <img src="https://clashmac.cn.com/img/docs/20260102140653440.webp" alt="Clash Mi 从剪贴板导入订阅" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+    </p>
+
+    <h3>3. 粘贴订阅链接并填写备注</h3>
+    <p>在配置页面中：粘贴订阅地址，备注随意填写（如「我的订阅」），然后点击右上角 <strong>✔ 保存</strong>。</p>
+    <p style="text-align: center;">
+      <img src="https://clashmac.cn.com/img/docs/20260102140716364.webp" alt="Clash Mi 粘贴订阅链接" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+    </p>
+
+    <h3>4. 导入完成</h3>
+    <p>看到提示后，点击 <strong>确定</strong> 即表示订阅导入成功。</p>
+    <p style="text-align: center;">
+      <img src="https://clashmac.cn.com/img/docs/20260102140747584.webp" alt="Clash Mi 导入成功" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+    </p>
+
+    <h2 id="start-proxy">🚀 启动代理连接</h2>
+
+    <h3>1. 返回主界面</h3>
+    <p>点击左上角返回首页。</p>
+    <p style="text-align: center;">
+      <img src="https://clashmac.cn.com/img/docs/20260102140818878.webp" alt="Clash Mi 返回首页" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+    </p>
+
+    <h3>2. 开启连接</h3>
+    <p>在首页进行以下操作：选择代理模式为「规则」或「全局」，然后打开右上角开关。状态显示 <strong>已连接</strong> 即表示代理生效。</p>
+    <p style="text-align: center;">
+      <img src="https://clashmac.cn.com/img/docs/20260102140840888.webp" alt="Clash Mi 开启连接" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+    </p>
+
+    <h2 id="switch-node">🔄 节点切换方法</h2>
+    <p>如果你的订阅包含多个节点：点击首页 <strong>代理</strong>，进入节点列表，选择需要使用的节点（如 🇭🇰 香港 / 🇸🇬 新加坡 / 🇺🇸 美国）。</p>
+    <p style="text-align: center;">
+      <img src="https://clashmac.cn.com/img/docs/20260102140934220.webp" alt="Clash Mi 选择具体节点-1" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+    </p>
+    <p style="text-align: center;">
+      <img src="https://clashmac.cn.com/img/docs/20260102141113416.webp" alt="Clash Mi 选择具体节点-2" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+    </p>
+  `;
+}
+
 function getContentForArticle(art, airports) {
   const content = art.content;
   if (content === "GENERATE_CLASH_VERGE_REV_TUTORIAL") {
@@ -737,6 +861,12 @@ function getContentForArticle(art, airports) {
   }
   if (content === "GENERATE_V2RAYN_TUTORIAL") {
     return generateV2rayNTutorial();
+  }
+  if (content === "GENERATE_CLASH_PARTY_TUTORIAL") {
+    return generateClashPartyTutorial();
+  }
+  if (content === "GENERATE_CLASHMI_TUTORIAL") {
+    return generateClashMiTutorial();
   }
   if (content === "GENERATE_CLASH_META_ANDROID_TUTORIAL") {
     return generateClashMetaAndroidTutorial();

@@ -880,7 +880,7 @@ function build() {
 
   // --- SEO & INTERNAL LINKING HELPERS ---
   const getSeoTags = (title, description, pageSlug) => {
-    const canonicalUrl = `https://vpns-top.com/${pageSlug}`;
+    const canonicalUrl = `https://tizibest.com/${pageSlug}`;
     return `
   <meta name="geo.region" content="CN" />
   <meta name="geo.placename" content="China" />
@@ -888,7 +888,7 @@ function build() {
   <meta name="revisit-after" content="3 days" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
   <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="稳定机场推荐 - vpns-top.com" />
+  <meta property="og:site_name" content="稳定机场推荐 - tizibest.com" />
   <meta property="og:locale" content="zh_CN" />
   <meta property="og:title" content="${title}">
   <meta property="og:description" content="${description}">
@@ -898,7 +898,7 @@ function build() {
   };
 
   const getPostSeoTags = (title, description, slug) => {
-    const canonicalUrl = `https://vpns-top.com/posts/${slug}.html`;
+    const canonicalUrl = `https://tizibest.com/posts/${slug}.html`;
     return `
   <meta name="geo.region" content="CN" />
   <meta name="geo.placename" content="China" />
@@ -906,7 +906,7 @@ function build() {
   <meta name="revisit-after" content="3 days" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
   <meta property="og:type" content="article" />
-  <meta property="og:site_name" content="稳定机场推荐 - vpns-top.com" />
+  <meta property="og:site_name" content="稳定机场推荐 - tizibest.com" />
   <meta property="og:locale" content="zh_CN" />
   <meta property="og:title" content="${title}">
   <meta property="og:description" content="${description}">
@@ -1224,7 +1224,7 @@ function formatSitemapDate(dateStr) {
 // Sitemap and Robots.txt Generator
 function generateSitemapAndRobots() {
   console.log("Generating sitemap.xml and robots.txt...");
-  const baseUrl = 'https://vpns-top.com';
+  const baseUrl = 'https://tizibest.com';
   
   // 1. Generate Sitemap XML
   let sitemapXML = `<?xml version="1.0" encoding="UTF-8"?>\n`;
@@ -1277,7 +1277,7 @@ function generateSitemapAndRobots() {
 function generateIndexNow() {
   console.log("Generating IndexNow validation key file...");
   const apiKey = '05709fa9015c42abb8ed05abca174cdd';
-  const baseUrl = 'https://vpns-top.com';
+  const baseUrl = 'https://tizibest.com';
   
   // Write the verification txt file
   fs.writeFileSync(path.join(__dirname, `${apiKey}.txt`), apiKey, 'utf-8');
@@ -1304,7 +1304,7 @@ function submitIndexNow(apiKey, baseUrl, urls) {
   console.log("Submitting URLs to IndexNow (Bing/Yandex)...");
   
   const postData = JSON.stringify({
-    host: 'vpns-top.com',
+    host: 'tizibest.com',
     key: apiKey,
     keyLocation: `${baseUrl}/${apiKey}.txt`,
     urlList: urls

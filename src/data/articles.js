@@ -124,6 +124,27 @@ const articles = [
     date: "2026-05-26",
     content: "GENERATE_CLASH_META_ANDROID_TUTORIAL"
   },
+  {
+    slug: "clash-party-tutorial",
+    title: "Clash Party 客户端使用教程 · 订阅导入与配置保姆级图文入门指南",
+    description: "最详尽的 Clash Party 客户端配置教程。为您介绍如何下载官方正版软件、导入机场订阅链接、切换代理模式以及开启系统分流规则。",
+    keywords: "Clash Party,Clash Party下载,Clash订阅,机场链接导入,科学上网,客户端配置",
+    category: "客户端配置教程",
+    tags: ["Clash Party", "新手指南", "客户端教程", "配置步骤"],
+    date: "2026-05-25",
+    content: "GENERATE_CLASH_PARTY_TUTORIAL"
+  },
+  {
+    slug: "clashmi-tutorial",
+    title: "Clash Mi 客户端使用教程 · 订阅导入与配置新手图文指南",
+    description: "最详尽的 Clash Mi 客户端配置教程。为您介绍如何下载官方正版软件、导入机场订阅链接、启动代理连接以及进行节点切换。",
+    keywords: "Clash Mi,Clash Mi下载,Clash订阅,机场链接导入,科学上网,客户端配置",
+    category: "客户端配置教程",
+    tags: ["Clash Mi", "新手指南", "客户端教程", "配置步骤"],
+    date: "2026-05-24",
+    content: "GENERATE_CLASHMI_TUTORIAL"
+  },
+
 
   // =========================================================================
   // 3. 12 篇机场相关的科普知识文章 (2000字左右)
