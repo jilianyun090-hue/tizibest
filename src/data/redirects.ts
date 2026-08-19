@@ -28,8 +28,8 @@ export const redirects: RedirectEntry[] = [
   {
     id: 'jisu-cloud',
     brand: '极速cloud',
-    destination: 'https://bbkk.bktgymdlgw.com/#/register?code=4XOqFpZD',
-    description: '极速cloud，性价比专线机场',
+    destination: 'https://august.jsjc456789.com',
+    description: '极速cloud，三网优化精品线路，15元/月起',
   },
   {
     id: 'jilian-yun',

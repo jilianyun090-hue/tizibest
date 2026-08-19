@@ -77,13 +77,26 @@ const airports = [
     logo: "assets/images/breezenet.png"
   },
   {
+    name: "极速Cloud",
+    price: "15.00",
+    slug: "jisuccloud-review",
+    features: ["三网优化", "GPT/Nf/Tk解锁", "冷门原生IP", "多设备支持"],
+    desc: "三网优化精品线路，保障24小时稳定流畅。提供1000G-5000G超大流量套餐，全解锁GPT、Netflix、TikTok及冷门国家原生IP，支持多设备并发连接与工单快速响应。",
+    affLink: "https://august.jsjc456789.com",
+    rank: 4,
+    noLimit: true,
+    hasTrial: false,
+    tgGroup: "",
+    logo: "https://i.ibb.co/5XvXTMxR/photo-2025-12-14-16-40-25.jpg"
+  },
+  {
     name: "瞬云机场",
     price: "8.25",
     slug: "shunyun-review",
     features: ["Anycast直连", "1倍率无虚标", "大带宽", "支持不限时"],
     desc: "全站一倍率无虚标的高性价比机场。作为便宜机场推荐首选，提供Anycast高速直连节点与不限时流量包，畅享4K视频与Netflix/YouTube解锁，堪称年度最好用机场 and 高稳定性科学上网梯子。",
     affLink: "https://ccc.jichang.best/#/register?code=o4I4kToe",
-    rank: 4,
+    rank: 5,
     noLimit: true,
     hasTrial: false,
     tgGroup: "https://t.me/shunyun",
