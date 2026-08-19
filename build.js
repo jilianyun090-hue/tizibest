@@ -87,7 +87,7 @@ const airports = [
     noLimit: true,
     hasTrial: false,
     tgGroup: "",
-    logo: "https://i.ibb.co/5XvXTMxR/photo-2025-12-14-16-40-25.jpg"
+    logo: "assets/images/jisuccloud.png"
   },
   {
     name: "瞬云机场",
