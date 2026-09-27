@@ -12,25 +12,12 @@ process.on('unhandledRejection', (err) => {
 const articles = require('./src/data/articles.js');
 const articleGenerator = require('./src/data/articleGenerator.js');
 
-// Pad description to meet search engine recommended length (150-160 characters)
+// Clean description without generic boilerplate suffix (prevents duplicate meta description penalties)
 function padDescription(desc) {
   if (!desc) return '';
-  const targetMin = 150;
-  const targetMax = 156;
-  if (desc.length >= targetMin && desc.length <= targetMax) {
-    return desc;
-  }
-  if (desc.length > targetMax) {
-    return desc.substring(0, targetMax - 3) + '...';
-  }
-  const paddingSource = "稳定机场推荐网致力于为广大网络出海、外贸办公及学术科研用户提供客观中立的翻墙机场测评与Clash/小火箭等客户端配置指南，助您畅快安全连接全球网络。";
-  let needed = 152 - desc.length;
-  if (needed > 0) {
-    let suffix = " " + paddingSource.substring(0, needed - 1);
-    if (suffix.length < needed) {
-      suffix = suffix.padEnd(needed, '.');
-    }
-    return desc + suffix;
+  desc = desc.trim();
+  if (desc.length > 160) {
+    return desc.substring(0, 157) + '...';
   }
   return desc;
 }
@@ -1539,8 +1526,34 @@ function generateIndexNow() {
 }
 
 function submitIndexNow(apiKey, baseUrl, urls) {
-  console.log("Submitting URLs to IndexNow (Bing/Yandex)...");
-  console.log(`IndexNow validation key ${apiKey}.txt generated for ${urls.length} URLs (submission ready for deployment).`);
+  console.log(`Submitting ${urls.length} URLs to IndexNow (api.indexnow.org & www.bing.com)...`);
+  const payload = JSON.stringify({
+    host: "tizibest.com",
+    key: apiKey,
+    keyLocation: `${baseUrl}/${apiKey}.txt`,
+    urlList: urls
+  });
+
+  const endpoints = ['api.indexnow.org', 'www.bing.com'];
+  endpoints.forEach(host => {
+    const options = {
+      hostname: host,
+      path: '/indexnow',
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json; charset=utf-8',
+        'Content-Length': Buffer.byteLength(payload)
+      }
+    };
+    const req = https.request(options, (res) => {
+      console.log(`IndexNow submission to ${host} status: ${res.statusCode}`);
+    });
+    req.on('error', (e) => {
+      console.warn(`IndexNow submission to ${host} failed:`, e.message);
+    });
+    req.write(payload);
+    req.end();
+  });
 }
 
 build();
