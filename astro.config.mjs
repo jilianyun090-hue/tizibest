@@ -3,7 +3,7 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
-  site: 'https://vpns-top.com',
+  site: 'https://tizibest.com',
   output: 'static',
   integrations: [
     tailwind({

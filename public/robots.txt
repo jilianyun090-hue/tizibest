@@ -29,9 +29,5 @@ Allow: /
 User-agent: Baiduspider
 Allow: /
 
-# Block redirect routes from all bots (protect affiliate links)
-User-agent: *
-Disallow: /go/
-
 # ── Sitemap ────────────────────────────────────────────────
-Sitemap: https://vpns-top.com/sitemap-index.xml
+Sitemap: https://tizibest.com/sitemap.xml

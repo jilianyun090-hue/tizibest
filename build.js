@@ -22,6 +22,61 @@ function padDescription(desc) {
   return desc;
 }
 
+function getFirstParagraphText(content) {
+  const firstParagraph = String(content || '').match(/<p\b[^>]*>([\s\S]*?)<\/p>/i);
+  if (!firstParagraph) return '';
+
+  return firstParagraph[1]
+    .replace(/<[^>]*>/g, ' ')
+    .replace(/&nbsp;/gi, ' ')
+    .replace(/&amp;/gi, '&')
+    .replace(/&quot;/gi, '"')
+    .replace(/&#39;/gi, "'")
+    .replace(/&lt;/gi, '<')
+    .replace(/&gt;/gi, '>')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function getArticleMetaDescription(art) {
+  const description = padDescription(art.description || '');
+  if (description.length >= 120 || !art.content) return description;
+
+  const intro = getFirstParagraphText(art.content);
+  if (intro.length < 120) return description;
+
+  const ignoredTags = new Set(['机场', '机场推荐', '机场评测', '科学上网', '流媒体', '高性价比', '专线', '节点', '推荐', '评测', '教程', '指南', '解锁']);
+  const topicTags = (Array.isArray(art.tags) ? art.tags : [])
+    .map(tag => String(tag).trim())
+    .filter(tag => tag.length >= 3 && !ignoredTags.has(tag.toLowerCase()));
+  if (topicTags.length && !topicTags.some(tag => intro.toLowerCase().includes(tag.toLowerCase()))) {
+    return description;
+  }
+
+  return intro.length >= 120 ? padDescription(intro) : description;
+}
+
+function getPageMetaDescription(pageHTML, description) {
+  const current = padDescription(description);
+  if (current.length >= 80) return current;
+
+  const main = String(pageHTML || '').match(/<main\b[^>]*>([\s\S]*?)<\/main>/i);
+  const intro = getFirstParagraphText(main ? main[1] : pageHTML);
+  return intro.length >= 80 ? padDescription(intro) : current;
+}
+
+function updateMetaDescription(pageHTML, description) {
+  const escaped = description
+    .replace(/&/g, '&amp;')
+    .replace(/"/g, '&quot;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+  return pageHTML.replace(
+    /<meta\s+name=["']description["']\s+content=["'][^"']*["'][^>]*>/i,
+    () => `<meta name="description" content="${escaped}">`
+  );
+}
+
 // Airport metadata for grid cards and comparison table
 const airports = [
   {
@@ -463,22 +518,6 @@ function generateTOC(content) {
 
 function build() {
   console.log("Starting static site build...");
-
-  // SEO screen-reader-only content block containing all target keywords
-  const seoHiddenBlock = `
-    <div class="sr-only">
-      <h2>2026年科学上网稳定翻墙机场推荐与常用节点配置</h2>
-      <p>本站长期关注并测试全球高速稳定机场节点服务，涵盖机场推荐、机场节点、翻墙机场、科学上网机场、高速机场、稳定机场、SSR机场、Trojan机场、V2Ray机场、Clash机场、Shadowsocks机场、VPN替代、代理节点、海外节点和国际网络加速等关键网络加速服务。</p>
-      <h3>用户高意图便宜与性价比机场选择</h3>
-      <p>为满足广大用户购买意图，我们精选了便宜机场推荐、性价比机场、稳定机场推荐、高速机场推荐、最好用机场。特别针对特定应用提供优化支持：Netflix机场、ChatGPT机场、Claude机场、YouTube机场、TikTok机场、AI专用机场、解锁流媒体机场、4K机场与游戏加速机场。</p>
-      <h3>常用长尾竞争词与多区域节点推荐</h3>
-      <p>主要关注包括：2026机场推荐、新手机场推荐、Clash机场推荐、稳定机场推荐知乎、高速机场推荐贴吧、ChatGPT节点推荐、Claude节点推荐、Netflix解锁机场、TikTok运营机场，提供香港机场推荐、日本机场推荐、新加坡机场推荐、美国机场推荐，采用优质IEPL机场推荐和IPLC机场推荐物理专线。</p>
-      <h3>主流科学上网客户端与教程指引</h3>
-      <p>我们提供全方位的科学上网教程、机场订阅教程、节点配置教程，主要教程包括：Clash Verge Rev教程、Clash Meta教程、Clash订阅链接、Clash配置教程、V2RayN教程、Shadowrocket教程、Quantumult X教程、Surge教程。</p>
-      <h3>解决AI访问限制与流媒体解锁流量问题</h3>
-      <p>重点帮助解答：ChatGPT怎么用、ChatGPT网络问题、Claude无法访问、Gemini无法访问，提供专业的OpenAI节点推荐、Claude节点推荐、AI工具网络解决方案、ChatGPT专线节点服务。针对流媒体解锁提供Netflix解锁、Disney+解锁、HBO Max解锁、YouTube Premium、TikTok运营网络、TikTok直播网络以及海外短视频网络配置方案。</p>
-    </div>
-  `;
 
   // 0. Pre-generate all dynamic article contents in-place
   articles.forEach(art => {
@@ -950,6 +989,7 @@ function build() {
   <meta name="language" content="zh-CN" />
   <meta name="revisit-after" content="3 days" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <link rel="canonical" href="${canonicalUrl}" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="稳定机场推荐 - tizibest.com" />
   <meta property="og:locale" content="zh_CN" />
@@ -1046,6 +1086,7 @@ ${JSON.stringify(breadcrumbSchema, null, 2)}
   <meta name="language" content="zh-CN" />
   <meta name="revisit-after" content="3 days" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <link rel="canonical" href="${canonicalUrl}" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="稳定机场推荐 - tizibest.com" />
   <meta property="og:locale" content="zh_CN" />
@@ -1158,7 +1199,8 @@ ${JSON.stringify(breadcrumbSchema, null, 2)}
     const titleMatch = homeHTML.match(/<title>([\s\S]+?)<\/title>/i);
     const descMatch = homeHTML.match(/<meta\s+name=["']description["']\s+content=["']([\s\S]+?)["']/i);
     const pageTitle = titleMatch ? titleMatch[1] : '稳定机场推荐';
-    const pageDesc = descMatch ? padDescription(descMatch[1]) : '';
+    const pageDesc = descMatch ? getPageMetaDescription(homeHTML, descMatch[1]) : '';
+    homeHTML = updateMetaDescription(homeHTML, pageDesc);
     const seoTags = getSeoTags(pageTitle, pageDesc, '');
     
     // Perform replacements
@@ -1171,7 +1213,6 @@ ${JSON.stringify(breadcrumbSchema, null, 2)}
     homeHTML = homeHTML.replace(/\{\{seoTags\}\}/g, seoTags);
     homeHTML = homeHTML.replace(/\{\{sidebarLadderRecs\}\}/g, sidebarLadderRecs.replace(/\{\{rootPath\}\}/g, ''));
     
-    homeHTML = homeHTML.replace('</body>', `${seoHiddenBlock}\n</body>`);
     fs.writeFileSync(path.join(__dirname, 'index.html'), homeHTML, 'utf-8');
     console.log("Compiled index.html");
   } else {
@@ -1187,7 +1228,8 @@ ${JSON.stringify(breadcrumbSchema, null, 2)}
     const titleMatch = gridHTML.match(/<title>([\s\S]+?)<\/title>/i);
     const descMatch = gridHTML.match(/<meta\s+name=["']description["']\s+content=["']([\s\S]+?)["']/i);
     const pageTitle = titleMatch ? titleMatch[1] : '2026年机场评测推荐列表';
-    const pageDesc = descMatch ? padDescription(descMatch[1]) : '';
+    const pageDesc = descMatch ? getPageMetaDescription(gridHTML, descMatch[1]) : '';
+    gridHTML = updateMetaDescription(gridHTML, pageDesc);
     const seoTags = getSeoTags(pageTitle, pageDesc, 'airport.html');
     
     // Generate Table of Contents for the airport recommendations list
@@ -1206,7 +1248,6 @@ ${JSON.stringify(breadcrumbSchema, null, 2)}
     gridHTML = gridHTML.replace(/\{\{searchIndex\}\}/g, searchIndexJSON);
     gridHTML = gridHTML.replace(/\{\{seoTags\}\}/g, seoTags);
     
-    gridHTML = gridHTML.replace('</body>', `${seoHiddenBlock}\n</body>`);
     fs.writeFileSync(path.join(__dirname, 'airport.html'), gridHTML, 'utf-8');
     console.log("Compiled airport.html");
   } else {
@@ -1222,7 +1263,8 @@ ${JSON.stringify(breadcrumbSchema, null, 2)}
     const titleMatch = reviewsHTML.match(/<title>([\s\S]+?)<\/title>/i);
     const descMatch = reviewsHTML.match(/<meta\s+name=["']description["']\s+content=["']([\s\S]+?)["']/i);
     const pageTitle = titleMatch ? titleMatch[1] : '稳定高速机场评测列表';
-    const pageDesc = descMatch ? padDescription(descMatch[1]) : '';
+    const pageDesc = descMatch ? getPageMetaDescription(reviewsHTML, descMatch[1]) : '';
+    reviewsHTML = updateMetaDescription(reviewsHTML, pageDesc);
     const seoTags = getSeoTags(pageTitle, pageDesc, 'reviews.html');
     
     reviewsHTML = reviewsHTML.replace(/\{\{reviewArticles\}\}/g, reviewArticlesMarkup);
@@ -1233,7 +1275,6 @@ ${JSON.stringify(breadcrumbSchema, null, 2)}
     reviewsHTML = reviewsHTML.replace(/\{\{seoTags\}\}/g, seoTags);
     reviewsHTML = reviewsHTML.replace(/\{\{sidebarLadderRecs\}\}/g, sidebarLadderRecs.replace(/\{\{rootPath\}\}/g, ''));
     
-    reviewsHTML = reviewsHTML.replace('</body>', `${seoHiddenBlock}\n</body>`);
     fs.writeFileSync(path.join(__dirname, 'reviews.html'), reviewsHTML, 'utf-8');
     console.log("Compiled reviews.html");
   } else {
@@ -1249,7 +1290,8 @@ ${JSON.stringify(breadcrumbSchema, null, 2)}
     const titleMatch = guidesHTML.match(/<title>([\s\S]+?)<\/title>/i);
     const descMatch = guidesHTML.match(/<meta\s+name=["']description["']\s+content=["']([\s\S]+?)["']/i);
     const pageTitle = titleMatch ? titleMatch[1] : '科学上网指南与技术科普专题';
-    const pageDesc = descMatch ? padDescription(descMatch[1]) : '';
+    const pageDesc = descMatch ? getPageMetaDescription(guidesHTML, descMatch[1]) : '';
+    guidesHTML = updateMetaDescription(guidesHTML, pageDesc);
     const seoTags = getSeoTags(pageTitle, pageDesc, 'guides.html');
     
     guidesHTML = guidesHTML.replace(/\{\{guideArticles\}\}/g, guideArticlesMarkup);
@@ -1260,7 +1302,6 @@ ${JSON.stringify(breadcrumbSchema, null, 2)}
     guidesHTML = guidesHTML.replace(/\{\{seoTags\}\}/g, seoTags);
     guidesHTML = guidesHTML.replace(/\{\{sidebarLadderRecs\}\}/g, sidebarLadderRecs.replace(/\{\{rootPath\}\}/g, ''));
     
-    guidesHTML = guidesHTML.replace('</body>', `${seoHiddenBlock}\n</body>`);
     fs.writeFileSync(path.join(__dirname, 'guides.html'), guidesHTML, 'utf-8');
     console.log("Compiled guides.html");
   } else {
@@ -1276,13 +1317,13 @@ ${JSON.stringify(breadcrumbSchema, null, 2)}
     const titleMatch = softwareHTML.match(/<title>([\s\S]+?)<\/title>/i);
     const descMatch = softwareHTML.match(/<meta\s+name=["']description["']\s+content=["']([\s\S]+?)["']/i);
     const pageTitle = titleMatch ? titleMatch[1] : '翻墙加速软件客户端下载与配置新手教程';
-    const pageDesc = descMatch ? padDescription(descMatch[1]) : '';
+    const pageDesc = descMatch ? getPageMetaDescription(softwareHTML, descMatch[1]) : '';
+    softwareHTML = updateMetaDescription(softwareHTML, pageDesc);
     const seoTags = getSeoTags(pageTitle, pageDesc, 'software.html');
     
     softwareHTML = softwareHTML.replace(/\{\{searchIndex\}\}/g, searchIndexJSON);
     softwareHTML = softwareHTML.replace(/\{\{seoTags\}\}/g, seoTags);
     
-    softwareHTML = softwareHTML.replace('</body>', `${seoHiddenBlock}\n</body>`);
     fs.writeFileSync(path.join(__dirname, 'software.html'), softwareHTML, 'utf-8');
     console.log("Compiled software.html");
   } else {
@@ -1293,6 +1334,7 @@ ${JSON.stringify(breadcrumbSchema, null, 2)}
   const articleTemplatePath = path.join(__dirname, 'src', 'templates', 'article.html');
   if (fs.existsSync(articleTemplatePath)) {
     const articleTemplate = fs.readFileSync(articleTemplatePath, 'utf-8');
+    const usedMetaDescriptions = new Set();
     
     // Construct local search index adjusting URL path relative to posts directory
     const localSearchIndexJSON = JSON.stringify(articles.map(art => {
@@ -1306,7 +1348,11 @@ ${JSON.stringify(breadcrumbSchema, null, 2)}
     }));
 
     articles.forEach(art => {
-      const paddedDesc = padDescription(art.description || '');
+      let metaDescription = getArticleMetaDescription(art);
+      if (usedMetaDescriptions.has(metaDescription)) {
+        metaDescription = padDescription(art.description || '');
+      }
+      usedMetaDescriptions.add(metaDescription);
       let postHTML = articleTemplate;
       
       // First, replace tags in the article content itself (like comparison table and cards grid)
@@ -1328,10 +1374,10 @@ ${JSON.stringify(breadcrumbSchema, null, 2)}
         categoryLink = 'software.html';
       }
       
-      const seoTags = getPostSeoTags(art, art.title, paddedDesc, art.slug);
+      const seoTags = getPostSeoTags(art, art.title, metaDescription, art.slug);
       
       postHTML = postHTML.replace(/\{\{title\}\}/g, art.title);
-      postHTML = postHTML.replace(/\{\{description\}\}/g, paddedDesc);
+      postHTML = postHTML.replace(/\{\{description\}\}/g, metaDescription);
       postHTML = postHTML.replace(/\{\{keywords\}\}/g, art.keywords);
       postHTML = postHTML.replace(/\{\{date\}\}/g, art.date);
       postHTML = postHTML.replace(/\{\{category\}\}/g, art.category);
@@ -1349,7 +1395,7 @@ ${JSON.stringify(breadcrumbSchema, null, 2)}
       // rootPath inside subfolder posts/ is '../'
       postHTML = postHTML.replace(/\{\{rootPath\}\}/g, '../');
       
-      postHTML = postHTML.replace('</body>', `${mobileFloatBar.replace(/\{\{rootPath\}\}/g, '../')}\n${seoHiddenBlock}\n</body>`);
+      postHTML = postHTML.replace('</body>', `${mobileFloatBar.replace(/\{\{rootPath\}\}/g, '../')}\n</body>`);
       fs.writeFileSync(path.join(__dirname, 'posts', `${art.slug}.html`), postHTML, 'utf-8');
       console.log(`Compiled post: ${art.slug}.html`);
     });
@@ -1429,7 +1475,7 @@ function generateSitemapAndRobots() {
   
   // Core pages
   const corePages = [
-    { url: '', priority: '1.0', changefreq: 'daily' },
+    { url: '/', priority: '1.0', changefreq: 'daily' },
     { url: '/airport.html', priority: '0.9', changefreq: 'daily' },
     { url: '/reviews.html', priority: '0.9', changefreq: 'daily' },
     { url: '/guides.html', priority: '0.9', changefreq: 'daily' },
@@ -1466,6 +1512,7 @@ function generateSitemapAndRobots() {
   const robotsTxt = `# Allow all crawlers by default
 User-agent: *
 Allow: /
+Disallow: /go/
 
 # Domestic AI & Search Engine Crawlers
 User-agent: Bytespider
@@ -1521,8 +1568,11 @@ function generateIndexNow() {
     urls.push(`${baseUrl}/posts/${art.slug}.html`);
   });
 
-  // Call API submission
-  submitIndexNow(apiKey, baseUrl, urls);
+  if (process.env.SKIP_INDEXNOW === '1' || process.argv.includes('--skip-indexnow')) {
+    console.log('Skipping IndexNow submission for this build.');
+  } else {
+    submitIndexNow(apiKey, baseUrl, urls);
+  }
 }
 
 function submitIndexNow(apiKey, baseUrl, urls) {

@@ -1,6 +1,7 @@
 # Allow all crawlers by default
 User-agent: *
 Allow: /
+Disallow: /go/
 
 # Domestic AI & Search Engine Crawlers
 User-agent: Bytespider
